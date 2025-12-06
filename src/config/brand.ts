@@ -36,7 +36,7 @@ export type BrandConfig = {
 };
 
 export const BRAND: BrandConfig = {
-  brandName: "Example Drain Heroes",
+  brandName: "Block Drains Swindon",
   domain: "exampledrainheroes.co.uk",
   primaryLocation: "Swindon",
   serviceAreaLabel: "Swindon and surrounding areas",
