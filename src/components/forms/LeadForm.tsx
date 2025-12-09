@@ -112,6 +112,16 @@ export function LeadForm({
 
       if (error) throw error;
 
+      // Track in GA4
+      if (typeof window !== "undefined" && window.gtag) {
+        window.gtag("event", "generate_lead", {
+          event_category: "conversion",
+          event_label: sourcePage,
+          service: data.service,
+          location: data.location,
+        });
+      }
+
       // Generate a simple reference ID
       const ref = `REF-${Date.now().toString(36).toUpperCase()}`;
       setReferenceId(ref);
