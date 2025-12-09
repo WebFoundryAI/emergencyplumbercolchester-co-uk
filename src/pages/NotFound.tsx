@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
+import { SEOHead } from "@/components/seo/SEOHead";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Home, Phone, Search, MapPin, Wrench } from "lucide-react";
@@ -22,6 +23,13 @@ const NotFound = () => {
 
   return (
     <Layout>
+      <SEOHead
+        metadata={{
+          title: `Page Not Found | ${BRAND.brandName}`,
+          description: `The page you are looking for does not exist. Browse our drainage services or contact ${BRAND.brandName}.`,
+          noIndex: true,
+        }}
+      />
       <section className="section-padding">
         <div className="container-narrow px-4 text-center">
           <h1 className="text-6xl md:text-8xl font-bold text-primary mb-4">

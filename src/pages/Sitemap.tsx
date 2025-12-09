@@ -1,6 +1,6 @@
-import { useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
+import { SEOHead } from "@/components/seo/SEOHead";
 import { BRAND } from "@/config/brand";
 import { SERVICES } from "@/config/services";
 import { LOCATIONS } from "@/config/locations";
@@ -85,10 +85,6 @@ const Sitemap = () => {
     priority: "0.6",
   }));
 
-  useEffect(() => {
-    document.title = `Sitemap | ${BRAND.brandName}`;
-  }, []);
-
   const totalPages = 
     staticPages.length + 
     servicePages.length + 
@@ -99,9 +95,17 @@ const Sitemap = () => {
     blogPages.length;
 
   return (
-    <div className="min-h-screen bg-background py-16">
-      <div className="container-wide px-4">
-        <h1 className="text-3xl font-bold mb-8">Sitemap</h1>
+    <>
+      <SEOHead
+        metadata={{
+          title: `Sitemap | ${BRAND.brandName}`,
+          description: `Complete sitemap for ${BRAND.brandName}. Browse all our drainage services, locations, and blog posts.`,
+          canonicalUrl: "/sitemap",
+        }}
+      />
+      <div className="min-h-screen bg-background py-16">
+        <div className="container-wide px-4">
+          <h1 className="text-3xl font-bold mb-8">Sitemap</h1>
 
         <section className="mb-8">
           <h2 className="text-xl font-semibold mb-4">Main Pages</h2>
@@ -209,11 +213,12 @@ const Sitemap = () => {
           </section>
         )}
 
-        <div className="text-sm text-muted-foreground mt-8 pt-8 border-t">
-          <p>Total pages: {totalPages}</p>
+          <div className="text-sm text-muted-foreground mt-8 pt-8 border-t">
+            <p>Total pages: {totalPages}</p>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
