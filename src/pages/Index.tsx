@@ -51,7 +51,7 @@ const Index = () => {
       {/* AI-generated intro section */}
       <section className="section-padding bg-muted/30">
         <div className="container-wide px-4">
-          <div className="max-w-3xl mx-auto text-center">
+          <div className="max-w-5xl mx-auto text-center">
             <AIContentBlock
               type="home"
               keyParts={["intro"]}
