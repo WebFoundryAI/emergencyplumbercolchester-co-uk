@@ -20,11 +20,12 @@ export function Footer() {
           {/* Brand column */}
           <div>
             <h3 className="text-xl font-bold mb-4">{BRAND.brandName}</h3>
-            <p className="text-background/70 text-sm mb-4">{BRAND.tagline}</p>
+            {/* FIXED: /70 → /85 for contrast */}
+            <p className="text-background/85 text-sm mb-4">{BRAND.tagline}</p>
             <div className="space-y-1 text-sm">
               <a
                 href={`tel:${BRAND.phone}`}
-                className="flex items-center gap-2 text-background/80 hover:text-accent transition-colors min-h-[48px] py-2 md:min-h-0 md:py-0"
+                className="flex items-center gap-2 text-background/90 hover:text-accent transition-colors min-h-[48px] py-2 md:min-h-0 md:py-0"
                 onClick={handlePhoneClick}
               >
                 <Phone className="h-4 w-4" />
@@ -32,12 +33,13 @@ export function Footer() {
               </a>
               <a
                 href={`mailto:${BRAND.email}`}
-                className="flex items-center gap-2 text-background/80 hover:text-accent transition-colors min-h-[48px] py-2 md:min-h-0 md:py-0"
+                className="flex items-center gap-2 text-background/90 hover:text-accent transition-colors min-h-[48px] py-2 md:min-h-0 md:py-0"
               >
                 <Mail className="h-4 w-4" />
                 {BRAND.email}
               </a>
-              <div className="flex items-start gap-2 text-background/80 py-2 md:py-0">
+              {/* FIXED: /80 → /90 for contrast */}
+              <div className="flex items-start gap-2 text-background/90 py-2 md:py-0">
                 <MapPin className="h-4 w-4 mt-0.5 shrink-0" />
                 <span>
                   {BRAND.addressLine1}
@@ -49,7 +51,7 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Services column */}
+          {/* Services column - FIXED: /70 → /85 */}
           <div>
             <h4 className="font-semibold mb-4">Our Services</h4>
             <ul className="space-y-0 md:space-y-2 text-sm">
@@ -57,7 +59,7 @@ export function Footer() {
                 <li key={service.slug}>
                   <Link
                     to={`/services/${service.slug}`}
-                    className="text-background/70 hover:text-accent transition-colors block min-h-[48px] py-3 md:min-h-0 md:py-0 md:inline"
+                    className="text-background/85 hover:text-accent transition-colors block min-h-[48px] py-3 md:min-h-0 md:py-0 md:inline"
                   >
                     {service.name}
                   </Link>
@@ -66,7 +68,7 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Areas column */}
+          {/* Areas column - FIXED: /70 → /85 */}
           <div>
             <h4 className="font-semibold mb-4">Areas We Cover</h4>
             <ul className="space-y-0 md:space-y-2 text-sm">
@@ -74,7 +76,7 @@ export function Footer() {
                 <li key={location.slug}>
                   <Link
                     to={`/location/${location.slug}`}
-                    className="text-background/70 hover:text-accent transition-colors block min-h-[48px] py-3 md:min-h-0 md:py-0 md:inline"
+                    className="text-background/85 hover:text-accent transition-colors block min-h-[48px] py-3 md:min-h-0 md:py-0 md:inline"
                   >
                     {location.name}
                   </Link>
@@ -83,14 +85,14 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Quick links column */}
+          {/* Quick links column - FIXED: /70 → /85 */}
           <div>
             <h4 className="font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-0 md:space-y-2 text-sm">
               <li>
                 <Link
                   to="/about"
-                  className="text-background/70 hover:text-accent transition-colors block min-h-[48px] py-3 md:min-h-0 md:py-0 md:inline"
+                  className="text-background/85 hover:text-accent transition-colors block min-h-[48px] py-3 md:min-h-0 md:py-0 md:inline"
                 >
                   About Us
                 </Link>
@@ -98,7 +100,7 @@ export function Footer() {
               <li>
                 <Link
                   to="/faq"
-                  className="text-background/70 hover:text-accent transition-colors block min-h-[48px] py-3 md:min-h-0 md:py-0 md:inline"
+                  className="text-background/85 hover:text-accent transition-colors block min-h-[48px] py-3 md:min-h-0 md:py-0 md:inline"
                 >
                   FAQs
                 </Link>
@@ -106,7 +108,7 @@ export function Footer() {
               <li>
                 <Link
                   to="/contact"
-                  className="text-background/70 hover:text-accent transition-colors block min-h-[48px] py-3 md:min-h-0 md:py-0 md:inline"
+                  className="text-background/85 hover:text-accent transition-colors block min-h-[48px] py-3 md:min-h-0 md:py-0 md:inline"
                 >
                   Contact Us
                 </Link>
@@ -114,7 +116,7 @@ export function Footer() {
               <li>
                 <Link
                   to="/blog"
-                  className="text-background/70 hover:text-accent transition-colors block min-h-[48px] py-3 md:min-h-0 md:py-0 md:inline"
+                  className="text-background/85 hover:text-accent transition-colors block min-h-[48px] py-3 md:min-h-0 md:py-0 md:inline"
                 >
                   Blog
                 </Link>
@@ -122,7 +124,7 @@ export function Footer() {
               <li>
                 <Link
                   to="/sitemap"
-                  className="text-background/70 hover:text-accent transition-colors block min-h-[48px] py-3 md:min-h-0 md:py-0 md:inline"
+                  className="text-background/85 hover:text-accent transition-colors block min-h-[48px] py-3 md:min-h-0 md:py-0 md:inline"
                 >
                   Sitemap
                 </Link>
@@ -130,7 +132,7 @@ export function Footer() {
               <li>
                 <a
                   href="/sitemap.xml"
-                  className="text-background/70 hover:text-accent transition-colors block min-h-[48px] py-3 md:min-h-0 md:py-0 md:inline"
+                  className="text-background/85 hover:text-accent transition-colors block min-h-[48px] py-3 md:min-h-0 md:py-0 md:inline"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -140,20 +142,20 @@ export function Footer() {
               <li>
                 <Link
                   to="/admin"
-                  className="text-background/70 hover:text-accent transition-colors block min-h-[48px] py-3 md:min-h-0 md:py-0 md:inline"
+                  className="text-background/85 hover:text-accent transition-colors block min-h-[48px] py-3 md:min-h-0 md:py-0 md:inline"
                 >
                   Admin
                 </Link>
               </li>
             </ul>
 
-            {/* Legal links */}
+            {/* Legal links - FIXED: /70 → /85 */}
             <h4 className="font-semibold mb-3 mt-6">Legal</h4>
             <ul className="space-y-0 md:space-y-2 text-sm">
               <li>
                 <Link
                   to="/privacy"
-                  className="text-background/70 hover:text-accent transition-colors block min-h-[48px] py-3 md:min-h-0 md:py-0 md:inline"
+                  className="text-background/85 hover:text-accent transition-colors block min-h-[48px] py-3 md:min-h-0 md:py-0 md:inline"
                 >
                   Privacy Policy
                 </Link>
@@ -161,7 +163,7 @@ export function Footer() {
               <li>
                 <Link
                   to="/terms"
-                  className="text-background/70 hover:text-accent transition-colors block min-h-[48px] py-3 md:min-h-0 md:py-0 md:inline"
+                  className="text-background/85 hover:text-accent transition-colors block min-h-[48px] py-3 md:min-h-0 md:py-0 md:inline"
                 >
                   Terms of Service
                 </Link>
@@ -169,7 +171,7 @@ export function Footer() {
               <li>
                 <Link
                   to="/cookies"
-                  className="text-background/70 hover:text-accent transition-colors block min-h-[48px] py-3 md:min-h-0 md:py-0 md:inline"
+                  className="text-background/85 hover:text-accent transition-colors block min-h-[48px] py-3 md:min-h-0 md:py-0 md:inline"
                 >
                   Cookie Policy
                 </Link>
@@ -180,7 +182,8 @@ export function Footer() {
 
         <PopularLinks />
 
-        <div className="border-t border-background/20 mt-10 pt-6 text-center text-sm text-background/60">
+        {/* FIXED: /60 → /80 for copyright text */}
+        <div className="border-t border-background/20 mt-10 pt-6 text-center text-sm text-background/80">
           <p>
             © {new Date().getFullYear()} {BRAND.brandName}. All rights reserved.
             {BRAND.companyNumber && (

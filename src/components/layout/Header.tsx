@@ -61,13 +61,13 @@ export function Header() {
             )}
           </Link>
 
-          {/* Desktop navigation */}
+          {/* Desktop navigation - FIXED: /80 → text-foreground for full contrast */}
           <nav className="hidden lg:flex items-center gap-1">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 to={link.href}
-                className="px-4 py-2 text-sm font-medium text-foreground/80 hover:text-primary transition-colors rounded-md hover:bg-muted min-h-[44px] flex items-center"
+                className="px-4 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors rounded-md hover:bg-muted min-h-[44px] flex items-center"
               >
                 {link.label}
               </Link>
@@ -87,14 +87,14 @@ export function Header() {
           </button>
         </div>
 
-        {/* Mobile navigation */}
+        {/* Mobile navigation - FIXED: /80 → text-foreground for full contrast */}
         {isMenuOpen && (
           <nav className="lg:hidden py-4 border-t border-border animate-fade-in">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 to={link.href}
-                className="block px-4 py-3 min-h-[48px] text-foreground/80 hover:text-primary hover:bg-muted rounded-md transition-colors flex items-center"
+                className="block px-4 py-3 min-h-[48px] text-foreground hover:text-primary hover:bg-muted rounded-md transition-colors flex items-center"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {link.label}

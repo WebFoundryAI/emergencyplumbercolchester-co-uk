@@ -20,15 +20,15 @@
 
     /* Secondary: Slate Professional */
     --secondary: 215 15% 92%;
-    --secondary-foreground: 215 25% 25%;
+    --secondary-foreground: 215 25% 20%;
 
-    /* Muted: Soft backgrounds */
+    /* Muted: Soft backgrounds - FIXED: darkened foreground from 45% to 35% for AA contrast */
     --muted: 210 15% 95%;
-    --muted-foreground: 215 15% 45%;
+    --muted-foreground: 215 20% 35%;
 
     /* Accent: Emergency Yellow/Gold */
     --accent: 45 95% 50%;
-    --accent-foreground: 215 25% 15%;
+    --accent-foreground: 215 25% 12%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
@@ -47,7 +47,7 @@
     --card-shadow-hover: 0 8px 30px -6px hsla(213, 80%, 35%, 0.2);
     
     /* Trust badge colors */
-    --trust-green: 142 70% 40%;
+    --trust-green: 142 70% 35%;
     --trust-green-light: 142 50% 95%;
 
     --sidebar-background: 0 0% 98%;
@@ -76,8 +76,9 @@
     --secondary: 215 20% 20%;
     --secondary-foreground: 210 15% 90%;
 
+    /* FIXED: lightened from 60% to 70% for better contrast on dark backgrounds */
     --muted: 215 20% 18%;
-    --muted-foreground: 215 15% 60%;
+    --muted-foreground: 215 15% 70%;
 
     --accent: 45 90% 55%;
     --accent-foreground: 215 25% 10%;

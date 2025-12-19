@@ -51,7 +51,8 @@ export function HeroWithForm() {
                 Blocked Drains Swindon
               </h1>
 
-              <p className="text-lg md:text-xl text-primary-foreground/80 mb-8 max-w-xl">
+              {/* FIXED: Changed from /80 to /90 for better contrast (4.5:1+) */}
+              <p className="text-lg md:text-xl text-primary-foreground/90 mb-8 max-w-xl">
                 Fast, reliable drainage solutions for homes and businesses across {BRAND.serviceAreaLabel}. No call-out charges, fixed pricing, same-day service.
               </p>
 
@@ -77,7 +78,8 @@ export function HeroWithForm() {
                 <Phone className="h-8 w-8" />
                 {BRAND.phone}
               </a>
-              <p className="text-primary-foreground/60 text-sm mt-2">
+              {/* FIXED: Changed from /60 to /80 for better contrast */}
+              <p className="text-primary-foreground/80 text-sm mt-2">
                 Call now for immediate assistance
               </p>
             </div>
