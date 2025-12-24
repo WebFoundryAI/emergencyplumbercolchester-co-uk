@@ -136,7 +136,7 @@ const ServiceDetail = () => {
                 {topLocations.map((loc) => (
                   <Link
                     key={loc.slug}
-                    to={`/location/${loc.slug}/${service.slug}`}
+                    to={`/locations/${loc.slug}/${service.slug}`}
                     className="flex items-center gap-2 p-3 bg-muted rounded-lg hover:bg-muted/70 transition-colors"
                   >
                     <MapPin className="h-4 w-4 text-primary" />

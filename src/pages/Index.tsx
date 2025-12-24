@@ -26,7 +26,7 @@ const Index = () => {
   // Priority service-in-location combinations for internal linking
   const priorityLinks = SERVICES.slice(0, 3).flatMap((service) =>
     LOCATIONS.slice(0, 2).map((location) => ({
-      href: `/location/${location.slug}/${service.slug}`,
+      href: `/locations/${location.slug}/${service.slug}`,
       label: `${service.name} in ${location.name}`,
       icon: service.icon,
     }))

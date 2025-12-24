@@ -99,7 +99,7 @@ export function Footer() {
               {LOCATIONS.slice(0, 6).map((location) => (
                 <li key={location.slug}>
                   <Link
-                    to={`/location/${location.slug}`}
+                    to={`/locations/${location.slug}`}
                     className="text-background/85 hover:text-accent transition-colors block min-h-[48px] py-3 md:min-h-0 md:py-0 md:inline"
                   >
                     {location.name}

@@ -85,9 +85,9 @@ const App = () => (
             <Route path="/services/:serviceSlug" element={<ServiceDetail />} />
             <Route path="/services/:serviceSlug/:subServiceSlug" element={<SubServiceDetail />} />
             <Route path="/locations" element={<Locations />} />
-            <Route path="/location/:locationSlug" element={<LocationDetail />} />
-            <Route path="/location/:locationSlug/:serviceSlug" element={<LocationServiceDetail />} />
-            <Route path="/location/:locationSlug/:serviceSlug/:subServiceSlug" element={<LocationSubServiceDetail />} />
+            <Route path="/locations/:locationSlug" element={<LocationDetail />} />
+            <Route path="/locations/:locationSlug/:serviceSlug" element={<LocationServiceDetail />} />
+            <Route path="/locations/:locationSlug/:serviceSlug/:subServiceSlug" element={<LocationSubServiceDetail />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/faq" element={<FAQ />} />

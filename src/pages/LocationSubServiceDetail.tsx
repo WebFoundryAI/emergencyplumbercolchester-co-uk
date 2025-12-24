@@ -41,8 +41,8 @@ const LocationSubServiceDetail = () => {
 
   const breadcrumbItems = [
     { label: "Areas", href: "/locations" },
-    { label: location.name, href: `/location/${location.slug}` },
-    { label: service.name, href: `/location/${location.slug}/${service.slug}` },
+    { label: location.name, href: `/locations/${location.slug}` },
+    { label: service.name, href: `/locations/${location.slug}/${service.slug}` },
     { label: subService.name },
   ];
 
@@ -94,9 +94,9 @@ const LocationSubServiceDetail = () => {
           generateBreadcrumbSchema([
             { name: "Home", url: "/" },
             { name: "Areas", url: "/locations" },
-            { name: location.name, url: `/location/${location.slug}` },
-            { name: service.name, url: `/location/${location.slug}/${service.slug}` },
-            { name: subService.name, url: `/location/${location.slug}/${service.slug}/${subService.slug}` },
+            { name: location.name, url: `/locations/${location.slug}` },
+            { name: service.name, url: `/locations/${location.slug}/${service.slug}` },
+            { name: subService.name, url: `/locations/${location.slug}/${service.slug}/${subService.slug}` },
           ]),
         ]}
       />
@@ -105,7 +105,7 @@ const LocationSubServiceDetail = () => {
         <div className="hero-overlay py-16 md:py-20">
           <div className="container-wide px-4">
             <Link
-              to={`/location/${location.slug}/${service.slug}`}
+              to={`/locations/${location.slug}/${service.slug}`}
               className="inline-flex items-center gap-2 text-primary-foreground/70 hover:text-primary-foreground mb-6 transition-colors"
             >
               <ArrowLeft className="h-4 w-4" />
@@ -176,7 +176,7 @@ const LocationSubServiceDetail = () => {
                 {nearbyLocations.map((l) => (
                   <Link
                     key={l.slug}
-                    to={`/location/${l.slug}/${service.slug}/${subService.slug}`}
+                    to={`/locations/${l.slug}/${service.slug}/${subService.slug}`}
                     className="flex items-center gap-2 p-3 bg-muted rounded-lg hover:bg-muted/70 transition-colors"
                   >
                     <MapPin className="h-4 w-4 text-primary" />
@@ -199,7 +199,7 @@ const LocationSubServiceDetail = () => {
                   </Link>
                   {" · "}
                   <Link
-                    to={`/location/${location.slug}`}
+                    to={`/locations/${location.slug}`}
                     className="text-primary hover:underline"
                   >
                     {location.name}

@@ -24,7 +24,7 @@ export function LocationsGrid({ showAll = false }: LocationsGridProps) {
           {displayLocations.map((location, index) => (
             <Link
               key={location.slug}
-              to={`/location/${location.slug}`}
+              to={`/locations/${location.slug}`}
               className="group flex items-center gap-3 p-4 bg-card rounded-lg card-elevated hover:border-primary/20 border border-transparent transition-all animate-fade-in"
               style={{ animationDelay: `${index * 0.05}s` }}
             >

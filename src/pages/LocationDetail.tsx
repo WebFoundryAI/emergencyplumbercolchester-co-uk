@@ -59,7 +59,7 @@ const LocationDetail = () => {
           generateBreadcrumbSchema([
             { name: "Home", url: "/" },
             { name: "Areas", url: "/locations" },
-            { name: location.name, url: `/location/${location.slug}` },
+            { name: location.name, url: `/locations/${location.slug}` },
           ]),
           generateFAQSchema(getLocationFAQs(location.name)),
         ]}
@@ -126,7 +126,7 @@ const LocationDetail = () => {
                 {SERVICES.map((service) => (
                   <Link
                     key={service.slug}
-                    to={`/location/${location.slug}/${service.slug}`}
+                    to={`/locations/${location.slug}/${service.slug}`}
                     className="flex items-center gap-3 p-4 bg-muted rounded-lg hover:bg-muted/70 transition-colors"
                   >
                     <span className="text-2xl">{service.icon}</span>
@@ -163,7 +163,7 @@ const LocationDetail = () => {
                 {otherLocations.map((l) => (
                   <Link
                     key={l.slug}
-                    to={`/location/${l.slug}`}
+                    to={`/locations/${l.slug}`}
                     className="flex items-center gap-2 p-3 bg-muted rounded-lg hover:bg-muted/70 transition-colors"
                   >
                     <MapPin className="h-4 w-4 text-primary" />

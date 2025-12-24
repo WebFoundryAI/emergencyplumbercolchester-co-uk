@@ -30,7 +30,7 @@ export function ServicesGrid({ showAll = false, location }: ServicesGridProps) {
               <div className="text-4xl mb-4" aria-hidden="true">{service.icon}</div>
               <h3 className="text-lg font-bold mb-2">
                 <Link
-                  to={location ? `/location/${location}/${service.slug}` : `/services/${service.slug}`}
+                  to={location ? `/locations/${location}/${service.slug}` : `/services/${service.slug}`}
                   className="group-hover:text-primary transition-colors"
                 >
                   {service.name}
@@ -40,7 +40,7 @@ export function ServicesGrid({ showAll = false, location }: ServicesGridProps) {
                 {service.shortLabel}
               </p>
               <Link
-                to={location ? `/location/${location}/${service.slug}` : `/services/${service.slug}`}
+                to={location ? `/locations/${location}/${service.slug}` : `/services/${service.slug}`}
                 className="inline-flex items-center text-primary text-sm font-medium hover:gap-2 transition-all"
                 aria-label={`View ${service.name} services`}
               >

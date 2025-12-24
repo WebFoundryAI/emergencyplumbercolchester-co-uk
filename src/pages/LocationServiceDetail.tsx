@@ -50,7 +50,7 @@ const LocationServiceDetail = () => {
   const nearbyLocations = LOCATIONS.filter((l) => l.slug !== location.slug).slice(0, 3);
   const breadcrumbItems = [
     { label: "Areas", href: "/locations" },
-    { label: location.name, href: `/location/${location.slug}` },
+    { label: location.name, href: `/locations/${location.slug}` },
     { label: service.name },
   ];
 
@@ -63,10 +63,10 @@ const LocationServiceDetail = () => {
           generateBreadcrumbSchema([
             { name: "Home", url: "/" },
             { name: "Areas", url: "/locations" },
-            { name: location.name, url: `/location/${location.slug}` },
+            { name: location.name, url: `/locations/${location.slug}` },
             {
               name: service.name,
-              url: `/location/${location.slug}/${service.slug}`,
+              url: `/locations/${location.slug}/${service.slug}`,
             },
           ]),
           generateFAQSchema(getServiceInLocationFAQs(service.slug, location.name)),
@@ -77,7 +77,7 @@ const LocationServiceDetail = () => {
         <div className="hero-overlay py-16 md:py-20">
           <div className="container-wide px-4">
             <Link
-              to={`/location/${location.slug}`}
+              to={`/locations/${location.slug}`}
               className="inline-flex items-center gap-2 text-primary-foreground/70 hover:text-primary-foreground mb-6 transition-colors"
             >
               <ArrowLeft className="h-4 w-4" />
@@ -150,7 +150,7 @@ const LocationServiceDetail = () => {
                     {service.subServices.map((sub) => (
                       <Link
                         key={sub.slug}
-                        to={`/location/${location.slug}/${service.slug}/${sub.slug}`}
+                        to={`/locations/${location.slug}/${service.slug}/${sub.slug}`}
                         className="p-4 bg-muted rounded-lg hover:bg-muted/70 transition-colors group"
                       >
                         <span className="font-medium group-hover:text-primary transition-colors">
@@ -173,7 +173,7 @@ const LocationServiceDetail = () => {
                 {otherServices.map((s) => (
                   <Link
                     key={s.slug}
-                    to={`/location/${location.slug}/${s.slug}`}
+                    to={`/locations/${location.slug}/${s.slug}`}
                     className="p-4 bg-muted rounded-lg hover:bg-muted/70 transition-colors group"
                   >
                     <span className="font-medium group-hover:text-primary transition-colors">
@@ -194,7 +194,7 @@ const LocationServiceDetail = () => {
                 {nearbyLocations.map((l) => (
                   <Link
                     key={l.slug}
-                    to={`/location/${l.slug}/${service.slug}`}
+                    to={`/locations/${l.slug}/${service.slug}`}
                     className="flex items-center gap-2 p-3 bg-muted rounded-lg hover:bg-muted/70 transition-colors"
                   >
                     <MapPin className="h-4 w-4 text-primary" />
@@ -239,7 +239,7 @@ const LocationServiceDetail = () => {
                   </Link>
                   {" · "}
                   <Link
-                    to={`/location/${location.slug}`}
+                    to={`/locations/${location.slug}`}
                     className="text-primary hover:underline"
                   >
                     {location.name}

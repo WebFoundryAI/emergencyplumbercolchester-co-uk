@@ -71,7 +71,7 @@ const Locations = () => {
 
             <div className="grid md:grid-cols-3 gap-4 mb-8">
               <Link 
-                to="/location/swindon/blocked-drains" 
+                to="/locations/swindon/blocked-drains" 
                 className="p-4 bg-background rounded-lg border hover:border-primary transition-colors group"
               >
                 <h3 className="font-semibold text-lg group-hover:text-primary transition-colors">Blocked Drains Swindon</h3>
@@ -79,7 +79,7 @@ const Locations = () => {
               </Link>
               
               <Link 
-                to="/location/swindon/cctv-drain-surveys" 
+                to="/locations/swindon/cctv-drain-surveys" 
                 className="p-4 bg-background rounded-lg border hover:border-primary transition-colors group"
               >
                 <h3 className="font-semibold text-lg group-hover:text-primary transition-colors">CCTV Surveys Swindon</h3>
@@ -87,7 +87,7 @@ const Locations = () => {
               </Link>
               
               <Link 
-                to="/location/swindon/emergency-drain-services" 
+                to="/locations/swindon/emergency-drain-services" 
                 className="p-4 bg-background rounded-lg border hover:border-primary transition-colors group"
               >
                 <h3 className="font-semibold text-lg group-hover:text-primary transition-colors">Emergency Services Swindon</h3>
@@ -96,7 +96,7 @@ const Locations = () => {
             </div>
 
             <Link 
-              to="/location/swindon" 
+              to="/locations/swindon" 
               className="inline-flex items-center gap-2 text-primary font-semibold hover:underline"
             >
               View all Swindon drainage services →

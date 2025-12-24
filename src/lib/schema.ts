@@ -277,10 +277,10 @@ export function generateServiceInLocationSchema(
     {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
-      "@id": `https://${BRAND.domain}/location/${location.slug}/${service.slug}#localbusiness`,
+      "@id": `https://${BRAND.domain}/locations/${location.slug}/${service.slug}#localbusiness`,
       name: `${BRAND.brandName} - ${service.name} in ${location.name}`,
       description: `Professional ${service.name.toLowerCase()} services in ${location.name}, ${location.countyOrRegion}. Available 24/7.`,
-      url: `https://${BRAND.domain}/location/${location.slug}/${service.slug}`,
+      url: `https://${BRAND.domain}/locations/${location.slug}/${service.slug}`,
       telephone: BRAND.phone,
       email: BRAND.email,
       address: {

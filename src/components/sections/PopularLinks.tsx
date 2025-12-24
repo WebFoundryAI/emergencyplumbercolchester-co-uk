@@ -32,7 +32,7 @@ export function PopularLinks({ recentPosts = [] }: PopularLinksProps) {
         {topLocations.map((location) => (
           <Link
             key={location.slug}
-            to={`/location/${location.slug}`}
+            to={`/locations/${location.slug}`}
             className="text-background/85 hover:text-accent transition-colors min-h-[48px] py-3 flex items-center justify-center"
           >
             {location.name}
@@ -63,7 +63,7 @@ export function PopularLinks({ recentPosts = [] }: PopularLinksProps) {
         {topLocations.map((location) => (
           <Link
             key={location.slug}
-            to={`/location/${location.slug}`}
+            to={`/locations/${location.slug}`}
             className="text-background/85 hover:text-accent transition-colors"
           >
             {location.name}

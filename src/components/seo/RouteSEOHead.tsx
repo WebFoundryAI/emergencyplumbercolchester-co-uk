@@ -80,8 +80,8 @@ function getDynamicSeo(pathname: string, params: RouteParams) {
     };
   }
 
-  // Location: /location/:locationSlug
-  if (pathname.match(/^\/location\/[^\/]+\/?$/) && locationSlug) {
+  // Location: /locations/:locationSlug
+  if (pathname.match(/^\/locations\/[^\/]+\/?$/) && locationSlug) {
     const location = getLocationBySlug(locationSlug);
     const name = location?.name || slugToTitle(locationSlug);
     return {
@@ -90,8 +90,8 @@ function getDynamicSeo(pathname: string, params: RouteParams) {
     };
   }
 
-  // Location + Service: /location/:locationSlug/:serviceSlug
-  if (pathname.match(/^\/location\/[^\/]+\/[^\/]+\/?$/) && locationSlug && serviceSlug && !subServiceSlug) {
+  // Location + Service: /locations/:locationSlug/:serviceSlug
+  if (pathname.match(/^\/locations\/[^\/]+\/[^\/]+\/?$/) && locationSlug && serviceSlug && !subServiceSlug) {
     const location = getLocationBySlug(locationSlug);
     const service = getServiceBySlug(serviceSlug);
     const locName = location?.name || slugToTitle(locationSlug);
@@ -102,8 +102,8 @@ function getDynamicSeo(pathname: string, params: RouteParams) {
     };
   }
 
-  // Location + Service + Sub: /location/:locationSlug/:serviceSlug/:subServiceSlug
-  if (pathname.match(/^\/location\/[^\/]+\/[^\/]+\/[^\/]+\/?$/) && locationSlug && serviceSlug && subServiceSlug) {
+  // Location + Service + Sub: /locations/:locationSlug/:serviceSlug/:subServiceSlug
+  if (pathname.match(/^\/locations\/[^\/]+\/[^\/]+\/[^\/]+\/?$/) && locationSlug && serviceSlug && subServiceSlug) {
     const location = getLocationBySlug(locationSlug);
     const subService = getSubServiceBySlug(serviceSlug, subServiceSlug);
     const locName = location?.name || slugToTitle(locationSlug);

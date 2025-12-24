@@ -209,8 +209,8 @@ export function getSeoMeta(pathname: string, params: RouteParams = {}): SEOMeta 
     };
   }
 
-  // Location detail: /location/:locationSlug
-  if (pathname.match(/^\/location\/[^\/]+\/?$/) && params.locationSlug) {
+  // Location detail: /locations/:locationSlug
+  if (pathname.match(/^\/locations\/[^\/]+\/?$/) && params.locationSlug) {
     const location = getLocationBySlug(params.locationSlug);
     const locationName = location?.name || slugToTitle(params.locationSlug);
     return {
@@ -221,8 +221,8 @@ export function getSeoMeta(pathname: string, params: RouteParams = {}): SEOMeta 
     };
   }
 
-  // Location + Service: /location/:locationSlug/:serviceSlug
-  if (pathname.match(/^\/location\/[^\/]+\/[^\/]+\/?$/) && params.locationSlug && params.serviceSlug && !params.subServiceSlug) {
+  // Location + Service: /locations/:locationSlug/:serviceSlug
+  if (pathname.match(/^\/locations\/[^\/]+\/[^\/]+\/?$/) && params.locationSlug && params.serviceSlug && !params.subServiceSlug) {
     const location = getLocationBySlug(params.locationSlug);
     const service = getServiceBySlug(params.serviceSlug);
     const locationName = location?.name || slugToTitle(params.locationSlug);
@@ -235,8 +235,8 @@ export function getSeoMeta(pathname: string, params: RouteParams = {}): SEOMeta 
     };
   }
 
-  // Location + Service + SubService: /location/:locationSlug/:serviceSlug/:subServiceSlug
-  if (pathname.match(/^\/location\/[^\/]+\/[^\/]+\/[^\/]+\/?$/) && params.locationSlug && params.serviceSlug && params.subServiceSlug) {
+  // Location + Service + SubService: /locations/:locationSlug/:serviceSlug/:subServiceSlug
+  if (pathname.match(/^\/locations\/[^\/]+\/[^\/]+\/[^\/]+\/?$/) && params.locationSlug && params.serviceSlug && params.subServiceSlug) {
     const location = getLocationBySlug(params.locationSlug);
     const subService = getSubServiceBySlug(params.serviceSlug, params.subServiceSlug);
     const locationName = location?.name || slugToTitle(params.locationSlug);
@@ -408,7 +408,7 @@ export function getAllIndexableUrls(): Array<{
   // Location pages
   for (const location of LOCATIONS) {
     urls.push({
-      url: `/location/${location.slug}/`,
+      url: `/locations/${location.slug}/`,
       priority: "0.8",
       changefreq: "weekly",
     });
@@ -416,7 +416,7 @@ export function getAllIndexableUrls(): Array<{
     // Location + Service pages
     for (const service of SERVICES) {
       urls.push({
-        url: `/location/${location.slug}/${service.slug}/`,
+        url: `/locations/${location.slug}/${service.slug}/`,
         priority: "0.7",
         changefreq: "weekly",
       });
@@ -425,7 +425,7 @@ export function getAllIndexableUrls(): Array<{
       if (service.subServices) {
         for (const sub of service.subServices) {
           urls.push({
-            url: `/location/${location.slug}/${service.slug}/${sub.slug}/`,
+            url: `/locations/${location.slug}/${service.slug}/${sub.slug}/`,
             priority: "0.6",
             changefreq: "weekly",
           });

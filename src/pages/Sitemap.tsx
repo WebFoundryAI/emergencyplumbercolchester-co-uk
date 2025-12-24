@@ -58,14 +58,14 @@ const Sitemap = () => {
   );
 
   const locationPages = LOCATIONS.map((location) => ({
-    url: `/location/${location.slug}`,
+    url: `/locations/${location.slug}`,
     name: location.name,
     priority: "0.8",
   }));
 
   const serviceLocationPages = LOCATIONS.flatMap((location) =>
     SERVICES.map((service) => ({
-      url: `/location/${location.slug}/${service.slug}`,
+      url: `/locations/${location.slug}/${service.slug}`,
       name: `${service.name} in ${location.name}`,
       priority: "0.7",
     }))
@@ -75,7 +75,7 @@ const Sitemap = () => {
   const subServiceLocationPages = LOCATIONS.flatMap((location) =>
     SERVICES.flatMap((service) =>
       (service.subServices || []).map((sub) => ({
-        url: `/location/${location.slug}/${service.slug}/${sub.slug}`,
+        url: `/locations/${location.slug}/${service.slug}/${sub.slug}`,
         name: `${sub.name} in ${location.name}`,
         priority: "0.6",
       }))
@@ -192,7 +192,7 @@ const Sitemap = () => {
                   {SERVICES.map((service) => (
                     <li key={`${location.slug}-${service.slug}`}>
                       <a
-                        href={`/location/${location.slug}/${service.slug}`}
+                        href={`/locations/${location.slug}/${service.slug}`}
                         className="text-primary hover:underline"
                       >
                         {service.name}

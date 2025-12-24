@@ -45,7 +45,7 @@ export function getLocationSEO(location: LocationConfig): SEOMetadata {
   return {
     title: `Drain Services in ${location.name} | ${BRAND.brandName}`,
     description: `Professional drainage services in ${location.name}, ${location.countyOrRegion}. 24/7 emergency drain unblocking, CCTV surveys, and repairs. Call ${BRAND.phone}`,
-    canonicalUrl: `/location/${location.slug}`,
+    canonicalUrl: `/locations/${location.slug}`,
   };
 }
 
@@ -56,7 +56,7 @@ export function getServiceInLocationSEO(
   return {
     title: `${service.name} in ${location.name} | ${BRAND.brandName}`,
     description: `Professional ${service.name.toLowerCase()} services in ${location.name}, ${location.countyOrRegion}. Fast response, fixed pricing. Call ${BRAND.phone}`,
-    canonicalUrl: `/location/${location.slug}/${service.slug}`,
+    canonicalUrl: `/locations/${location.slug}/${service.slug}`,
   };
 }
 
