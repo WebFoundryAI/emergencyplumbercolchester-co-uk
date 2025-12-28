@@ -18,9 +18,9 @@
     <!-- Hero background preload for LCP -->
     <link rel="preload" href="/src/assets/hero-bg.webp" as="image" type="image/webp" fetchpriority="high" />
     
-    <!-- Google Fonts CSS - async load (non-blocking) -->
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;" />
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
+    <!-- Google Fonts CSS - async load with optional display (no layout shift) -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=optional" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;" />
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=optional" rel="stylesheet" /></noscript>
     
     <!-- Critical CSS - inlined for immediate FCP (above-the-fold only) -->
     <style>
