@@ -1,9 +1,11 @@
-CREATE EXTENSION IF NOT EXISTS "pg_graphql";
-CREATE EXTENSION IF NOT EXISTS "pg_stat_statements";
-CREATE EXTENSION IF NOT EXISTS "pgcrypto";
-CREATE EXTENSION IF NOT EXISTS "plpgsql";
-CREATE EXTENSION IF NOT EXISTS "supabase_vault";
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+CREATE EXTENSION IF NOT EXISTS "pg_graphql" WITH SCHEMA "graphql";
+CREATE EXTENSION IF NOT EXISTS "pg_stat_statements" WITH SCHEMA "extensions";
+CREATE EXTENSION IF NOT EXISTS "pgcrypto" WITH SCHEMA "extensions";
+CREATE EXTENSION IF NOT EXISTS "plpgsql" WITH SCHEMA "pg_catalog";
+CREATE EXTENSION IF NOT EXISTS "supabase_vault" WITH SCHEMA "vault";
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp" WITH SCHEMA "extensions";
+BEGIN;
+
 --
 -- PostgreSQL database dump
 --
@@ -41,6 +43,24 @@ CREATE TYPE public.app_role AS ENUM (
 
 
 --
+-- Name: check_sitemap_stale(); Type: FUNCTION; Schema: public; Owner: -
+--
+
+CREATE FUNCTION public.check_sitemap_stale() RETURNS boolean
+    LANGUAGE sql STABLE
+    SET search_path TO 'public'
+    AS $$
+  SELECT EXISTS (
+    SELECT 1
+    FROM public.blog_posts bp
+    CROSS JOIN public.sitemap_status ss
+    WHERE bp.updated_at > ss.last_generated_at
+    LIMIT 1
+  );
+$$;
+
+
+--
 -- Name: has_role(uuid, public.app_role); Type: FUNCTION; Schema: public; Owner: -
 --
 
@@ -68,6 +88,26 @@ CREATE FUNCTION public.update_ai_content_updated_at() RETURNS trigger
 BEGIN
   NEW.updated_at = now();
   RETURN NEW;
+END;
+$$;
+
+
+--
+-- Name: update_sitemap_status_on_blog_change(); Type: FUNCTION; Schema: public; Owner: -
+--
+
+CREATE FUNCTION public.update_sitemap_status_on_blog_change() RETURNS trigger
+    LANGUAGE plpgsql SECURITY DEFINER
+    SET search_path TO 'public'
+    AS $$
+BEGIN
+  -- Update or insert sitemap status to mark regeneration needed
+  INSERT INTO public.sitemap_status (id, last_generated_at, url_count, generated_by)
+  VALUES (gen_random_uuid(), now() - interval '1 day', 0, 'trigger')
+  ON CONFLICT (id) DO UPDATE SET
+    last_generated_at = now() - interval '1 day';
+  
+  RETURN COALESCE(NEW, OLD);
 END;
 $$;
 
@@ -114,6 +154,21 @@ CREATE TABLE public.blog_posts (
 
 
 --
+-- Name: dismissed_health_issues; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.dismissed_health_issues (
+    id uuid DEFAULT gen_random_uuid() NOT NULL,
+    issue_key text NOT NULL,
+    issue_title text NOT NULL,
+    dismissed_by text,
+    dismissed_at timestamp with time zone DEFAULT now() NOT NULL,
+    reason text,
+    created_at timestamp with time zone DEFAULT now() NOT NULL
+);
+
+
+--
 -- Name: leads; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -127,6 +182,19 @@ CREATE TABLE public.leads (
     location text NOT NULL,
     message text,
     source_page text NOT NULL,
+    created_at timestamp with time zone DEFAULT now() NOT NULL
+);
+
+
+--
+-- Name: sitemap_status; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.sitemap_status (
+    id uuid DEFAULT gen_random_uuid() NOT NULL,
+    last_generated_at timestamp with time zone DEFAULT now() NOT NULL,
+    url_count integer DEFAULT 0 NOT NULL,
+    generated_by text,
     created_at timestamp with time zone DEFAULT now() NOT NULL
 );
 
@@ -176,11 +244,35 @@ ALTER TABLE ONLY public.blog_posts
 
 
 --
+-- Name: dismissed_health_issues dismissed_health_issues_issue_key_key; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.dismissed_health_issues
+    ADD CONSTRAINT dismissed_health_issues_issue_key_key UNIQUE (issue_key);
+
+
+--
+-- Name: dismissed_health_issues dismissed_health_issues_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.dismissed_health_issues
+    ADD CONSTRAINT dismissed_health_issues_pkey PRIMARY KEY (id);
+
+
+--
 -- Name: leads leads_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.leads
     ADD CONSTRAINT leads_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: sitemap_status sitemap_status_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.sitemap_status
+    ADD CONSTRAINT sitemap_status_pkey PRIMARY KEY (id);
 
 
 --
@@ -228,6 +320,27 @@ CREATE INDEX idx_blog_posts_unreviewed ON public.blog_posts USING btree (human_r
 
 
 --
+-- Name: blog_posts blog_posts_sitemap_delete; Type: TRIGGER; Schema: public; Owner: -
+--
+
+CREATE TRIGGER blog_posts_sitemap_delete AFTER DELETE ON public.blog_posts FOR EACH ROW EXECUTE FUNCTION public.update_sitemap_status_on_blog_change();
+
+
+--
+-- Name: blog_posts blog_posts_sitemap_insert; Type: TRIGGER; Schema: public; Owner: -
+--
+
+CREATE TRIGGER blog_posts_sitemap_insert AFTER INSERT ON public.blog_posts FOR EACH ROW EXECUTE FUNCTION public.update_sitemap_status_on_blog_change();
+
+
+--
+-- Name: blog_posts blog_posts_sitemap_update; Type: TRIGGER; Schema: public; Owner: -
+--
+
+CREATE TRIGGER blog_posts_sitemap_update AFTER UPDATE ON public.blog_posts FOR EACH ROW EXECUTE FUNCTION public.update_sitemap_status_on_blog_change();
+
+
+--
 -- Name: ai_content update_ai_content_updated_at; Type: TRIGGER; Schema: public; Owner: -
 --
 
@@ -271,10 +384,28 @@ CREATE POLICY "Admins can delete blog posts" ON public.blog_posts FOR DELETE USI
 
 
 --
+-- Name: dismissed_health_issues Admins can delete dismissed issues; Type: POLICY; Schema: public; Owner: -
+--
+
+CREATE POLICY "Admins can delete dismissed issues" ON public.dismissed_health_issues FOR DELETE USING ((EXISTS ( SELECT 1
+   FROM public.user_roles
+  WHERE ((user_roles.user_id = auth.uid()) AND (user_roles.role = 'admin'::public.app_role)))));
+
+
+--
 -- Name: ai_content Admins can insert ai_content; Type: POLICY; Schema: public; Owner: -
 --
 
 CREATE POLICY "Admins can insert ai_content" ON public.ai_content FOR INSERT WITH CHECK (public.has_role(auth.uid(), 'admin'::public.app_role));
+
+
+--
+-- Name: dismissed_health_issues Admins can insert dismissed issues; Type: POLICY; Schema: public; Owner: -
+--
+
+CREATE POLICY "Admins can insert dismissed issues" ON public.dismissed_health_issues FOR INSERT WITH CHECK ((EXISTS ( SELECT 1
+   FROM public.user_roles
+  WHERE ((user_roles.user_id = auth.uid()) AND (user_roles.role = 'admin'::public.app_role)))));
 
 
 --
@@ -292,10 +423,33 @@ CREATE POLICY "Admins can update blog posts" ON public.blog_posts FOR UPDATE USI
 
 
 --
+-- Name: sitemap_status Admins can update sitemap status; Type: POLICY; Schema: public; Owner: -
+--
+
+CREATE POLICY "Admins can update sitemap status" ON public.sitemap_status USING (public.has_role(auth.uid(), 'admin'::public.app_role));
+
+
+--
 -- Name: user_roles Admins can view all roles; Type: POLICY; Schema: public; Owner: -
 --
 
 CREATE POLICY "Admins can view all roles" ON public.user_roles FOR SELECT USING (public.has_role(auth.uid(), 'admin'::public.app_role));
+
+
+--
+-- Name: dismissed_health_issues Admins can view dismissed issues; Type: POLICY; Schema: public; Owner: -
+--
+
+CREATE POLICY "Admins can view dismissed issues" ON public.dismissed_health_issues FOR SELECT USING ((EXISTS ( SELECT 1
+   FROM public.user_roles
+  WHERE ((user_roles.user_id = auth.uid()) AND (user_roles.role = 'admin'::public.app_role)))));
+
+
+--
+-- Name: sitemap_status Admins can view sitemap status; Type: POLICY; Schema: public; Owner: -
+--
+
+CREATE POLICY "Admins can view sitemap status" ON public.sitemap_status FOR SELECT USING (public.has_role(auth.uid(), 'admin'::public.app_role));
 
 
 --
@@ -346,10 +500,22 @@ ALTER TABLE public.ai_content ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.blog_posts ENABLE ROW LEVEL SECURITY;
 
 --
+-- Name: dismissed_health_issues; Type: ROW SECURITY; Schema: public; Owner: -
+--
+
+ALTER TABLE public.dismissed_health_issues ENABLE ROW LEVEL SECURITY;
+
+--
 -- Name: leads; Type: ROW SECURITY; Schema: public; Owner: -
 --
 
 ALTER TABLE public.leads ENABLE ROW LEVEL SECURITY;
+
+--
+-- Name: sitemap_status; Type: ROW SECURITY; Schema: public; Owner: -
+--
+
+ALTER TABLE public.sitemap_status ENABLE ROW LEVEL SECURITY;
 
 --
 -- Name: user_roles; Type: ROW SECURITY; Schema: public; Owner: -
@@ -362,3 +528,6 @@ ALTER TABLE public.user_roles ENABLE ROW LEVEL SECURITY;
 --
 
 
+
+
+COMMIT;
