@@ -27,16 +27,16 @@ interface SitemapCheck {
 }
 
 const REPRESENTATIVE_URLS: { old: string; new: string }[] = [
-  { old: "/location/swindon", new: "/locations/swindon" },
-  { old: "/location/swindon/drain-jetting", new: "/locations/swindon/drain-jetting" },
-  { old: "/location/royal-wootton-bassett", new: "/locations/royal-wootton-bassett" },
-  { old: "/location/highworth/drain-unblocking", new: "/locations/highworth/drain-unblocking" },
-  { old: "/location/highworth/drain-unblocking/internal-drain-unblocking", new: "/locations/highworth/drain-unblocking/internal-drain-unblocking" },
-  { old: "/location/purton", new: "/locations/purton" },
-  { old: "/location/cricklade/blocked-drains", new: "/locations/cricklade/blocked-drains" },
-  { old: "/location/wroughton/blocked-drains/blocked-toilet", new: "/locations/wroughton/blocked-drains/blocked-toilet" },
-  { old: "/location/swindon/emergency-drain-services", new: "/locations/swindon/emergency-drain-services" },
-  { old: "/location/cricklade/cctv-drain-surveys/pre-purchase-survey", new: "/locations/cricklade/cctv-drain-surveys/pre-purchase-survey" },
+  { old: "/location/manchester", new: "/locations/manchester" },
+  { old: "/location/manchester/drain-jetting", new: "/locations/manchester/drain-jetting" },
+  { old: "/location/salford", new: "/locations/salford" },
+  { old: "/location/stockport/drain-unblocking", new: "/locations/stockport/drain-unblocking" },
+  { old: "/location/stockport/drain-unblocking/internal-drain-unblocking", new: "/locations/stockport/drain-unblocking/internal-drain-unblocking" },
+  { old: "/location/bolton", new: "/locations/bolton" },
+  { old: "/location/oldham/blocked-drains", new: "/locations/oldham/blocked-drains" },
+  { old: "/location/didsbury/blocked-drains/blocked-toilet", new: "/locations/didsbury/blocked-drains/blocked-toilet" },
+  { old: "/location/manchester/emergency-drain-services", new: "/locations/manchester/emergency-drain-services" },
+  { old: "/location/chorlton/cctv-drain-surveys/pre-purchase-survey", new: "/locations/chorlton/cctv-drain-surveys/pre-purchase-survey" },
 ];
 
 const Status = () => {

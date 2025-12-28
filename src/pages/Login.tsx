@@ -133,7 +133,7 @@ const Login = () => {
                   <Input
                     id="email"
                     type="email"
-                    placeholder="you@swindonblockeddrains.co.uk"
+                    placeholder="you@manchesterblockeddrains.co.uk"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
@@ -188,7 +188,7 @@ const Login = () => {
               <Input
                 id="email"
                 type="email"
-                placeholder="you@swindonblockeddrains.co.uk"
+                placeholder="you@manchesterblockeddrains.co.uk"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required

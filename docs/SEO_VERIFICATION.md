@@ -1,14 +1,11 @@
-# SEO Verification Checklist
+# SEO Verification Guide
 
-This document provides verification steps to confirm SEO implementation is correct.
+## 1. Quick URL Checks
 
-## 1. Static File Checks (200 responses)
-
-Verify these URLs return 200 OK responses:
-
-- [ ] https://swindonblockeddrains.co.uk/robots.txt
-- [ ] https://swindonblockeddrains.co.uk/sitemap.xml
-- [ ] https://swindonblockeddrains.co.uk/llm.html
+Test these URLs return HTTP 200:
+- [ ] https://manchesterblockeddrains.co.uk/robots.txt
+- [ ] https://manchesterblockeddrains.co.uk/sitemap.xml
+- [ ] https://manchesterblockeddrains.co.uk/llm.html
 
 ## 2. Browser Console Checks
 
@@ -78,7 +75,7 @@ document.querySelector('meta[name="twitter:title"]')?.content
 1. `/` - Homepage
 2. `/services/blocked-drains` - Service page
 3. `/locations` - Location hub
-4. `/location/swindon/drain-jetting` - Deep location+service page
+4. `/locations/manchester/drain-jetting` - Deep location+service page
 5. `/contact` - Contact page
 
 ### Additional Routes (spot check)
@@ -86,7 +83,7 @@ document.querySelector('meta[name="twitter:title"]')?.content
 - `/faq`
 - `/blog`
 - `/services/cctv-drain-surveys/pre-purchase-survey` - Sub-service page
-- `/location/highworth` - Location detail page
+- `/locations/salford` - Location detail page
 
 ## 5. NoIndex Routes
 
@@ -101,52 +98,22 @@ These routes are NOT in the sitemap.
 
 | Route | Canonical URL |
 |-------|---------------|
-| Homepage | `https://swindonblockeddrains.co.uk/` |
-| All others | No trailing slash (e.g., `/services/blocked-drains`) |
+| Homepage | `https://manchesterblockeddrains.co.uk/` |
+| Services | `https://manchesterblockeddrains.co.uk/services` |
+| Locations | `https://manchesterblockeddrains.co.uk/locations` |
+| Location detail | `https://manchesterblockeddrains.co.uk/locations/manchester` |
 
-## 7. Quick Validation Script
+## 7. Structured Data Test
 
-Copy and paste this into the browser console for a quick check:
+Use Google's Rich Results Test:
+https://search.google.com/test/rich-results
 
-```javascript
-(function() {
-  const results = {
-    title: document.title,
-    titleLength: document.title.length,
-    description: document.querySelector('meta[name="description"]')?.content,
-    descriptionLength: document.querySelector('meta[name="description"]')?.content?.length,
-    canonical: document.querySelector('link[rel="canonical"]')?.href,
-    robots: document.querySelector('meta[name="robots"]')?.content,
-    descriptionCount: document.querySelectorAll('meta[name="description"]').length,
-    canonicalCount: document.querySelectorAll('link[rel="canonical"]').length,
-    ogTitle: document.querySelector('meta[property="og:title"]')?.content,
-    ogUrl: document.querySelector('meta[property="og:url"]')?.content,
-  };
-  
-  console.table(results);
-  
-  // Warnings
-  if (results.titleLength > 60) console.warn('⚠️ Title too long');
-  if (results.descriptionLength > 160) console.warn('⚠️ Description too long');
-  if (results.descriptionLength < 140) console.warn('⚠️ Description may be too short');
-  if (results.descriptionCount !== 1) console.error('❌ Multiple descriptions found');
-  if (results.canonicalCount !== 1) console.error('❌ Multiple canonicals found');
-  if (results.canonical !== results.ogUrl) console.warn('⚠️ Canonical and OG:URL mismatch');
-  
-  return results;
-})();
-```
+Test these pages:
+- Homepage (LocalBusiness schema)
+- FAQ page (FAQPage schema)
+- Service pages (Service schema)
 
-## 8. Sitemap Validation
+## 8. Mobile-Friendly Test
 
-1. Check sitemap is valid XML: https://www.xml-sitemaps.com/validate-xml-sitemap.html
-2. Verify all URLs in sitemap are indexable (robots meta = "index, follow")
-3. Verify noindex routes are NOT in sitemap
-4. Check sitemap is referenced in robots.txt
-
-## 9. Tools for Further Validation
-
-- [Google Search Console](https://search.google.com/search-console) - Submit sitemap, check indexing
-- [Google Rich Results Test](https://search.google.com/test/rich-results) - Test structured data
-- [Schema Markup Validator](https://validator.schema.org/) - Validate JSON-LD
-- [Screaming Frog](https://www.screamingfrog.co.uk/seo-spider/) - Full site crawl
+Use Google's Mobile-Friendly Test:
+https://search.google.com/test/mobile-friendly

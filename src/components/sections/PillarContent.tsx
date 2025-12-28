@@ -1,7 +1,7 @@
 import { CheckCircle, Clock, Shield, MapPin, Phone, Wrench, Camera, AlertTriangle } from "lucide-react";
 import { BRAND } from "@/config/brand";
 
-// Format phone for display (01234567890 -> 01234 567890)
+// Format phone for display (01onal567890 -> 01onal 567890)
 const formatPhone = (phone: string) => {
   if (phone.length === 11) {
     return `${phone.slice(0, 5)} ${phone.slice(5)}`;
@@ -19,11 +19,11 @@ export function PillarContent() {
           <section className="mb-12">
             <h2 className="text-2xl md:text-3xl font-bold mb-4 flex items-center gap-3">
               <AlertTriangle className="h-7 w-7 text-primary shrink-0" />
-              Emergency Drain Call-outs in Swindon
+              Emergency Drain Call-outs in Manchester
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
               Blocked drains rarely happen at a convenient time. That's why we offer a genuine 24-hour emergency 
-              call-out service across Swindon and the surrounding villages. Whether it's a backed-up toilet at 
+              call-out service across Manchester and Greater Manchester. Whether it's a backed-up toilet at 
               midnight or a flooded kitchen drain on a Sunday morning, our local engineers can usually reach 
               you within 60–90 minutes.
             </p>
@@ -55,7 +55,7 @@ export function PillarContent() {
               Common Blocked Drain Problems
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              Most blocked drains in Swindon homes fall into a handful of common categories. Understanding what's 
+              Most blocked drains in Manchester homes fall into a handful of common categories. Understanding what's 
               causing your blockage helps us resolve it faster and advise you on prevention.
             </p>
             <ul className="space-y-3 text-muted-foreground mb-4">
@@ -69,7 +69,7 @@ export function PillarContent() {
               </li>
               <li className="flex items-start gap-3">
                 <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                <span><strong>Tree root ingress:</strong> Roots from nearby trees seek out moisture and can crack into older clay or concrete pipes—common in established Swindon neighbourhoods with mature gardens.</span>
+                <span><strong>Tree root ingress:</strong> Roots from nearby trees seek out moisture and can crack into older clay or concrete pipes—common in established Manchester neighbourhoods with mature gardens.</span>
               </li>
               <li className="flex items-start gap-3">
                 <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5" />
@@ -99,7 +99,7 @@ export function PillarContent() {
               misaligned joints in real time.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              CCTV surveys are especially useful if you're buying a property in Swindon. A pre-purchase drain 
+              CCTV surveys are especially useful if you're buying a property in Manchester. A pre-purchase drain 
               survey can reveal hidden problems that would cost thousands to repair—giving you negotiating 
               power or peace of mind before you exchange contracts.
             </p>
@@ -144,57 +144,57 @@ export function PillarContent() {
           <section className="mb-12">
             <h2 className="text-2xl md:text-3xl font-bold mb-4 flex items-center gap-3">
               <MapPin className="h-7 w-7 text-primary shrink-0" />
-              Areas We Cover in Swindon
+              Areas We Cover in Manchester
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              We're based locally and cover all of Swindon borough plus the surrounding towns and villages. 
+              We're based locally and cover all of Greater Manchester plus the surrounding towns and areas. 
               Our engineers know the area well—including the quirks of different housing types and the 
               drainage challenges that come with them.
             </p>
             <div className="grid sm:grid-cols-2 gap-x-8 gap-y-2 text-muted-foreground mb-4">
               <ul className="space-y-1">
-                <li>• Old Town & Town Centre</li>
-                <li>• West Swindon & Shaw</li>
-                <li>• Wichelstowe</li>
-                <li>• Highworth</li>
-                <li>• Wroughton</li>
-                <li>• Blunsdon</li>
+                <li>• Manchester City Centre</li>
+                <li>• Didsbury & Chorlton</li>
+                <li>• Salford & Eccles</li>
+                <li>• Stockport & Cheadle</li>
+                <li>• Bolton & Bury</li>
+                <li>• Oldham & Rochdale</li>
               </ul>
               <ul className="space-y-1">
-                <li>• Stratton & Upper Stratton</li>
-                <li>• Gorse Hill & Pinehurst</li>
-                <li>• Covingham & Nythe</li>
-                <li>• Chiseldon</li>
-                <li>• Purton</li>
-                <li>• Royal Wootton Bassett</li>
+                <li>• Trafford & Stretford</li>
+                <li>• Sale & Altrincham</li>
+                <li>• Wigan & Leigh</li>
+                <li>• Tameside & Ashton</li>
+                <li>• Fallowfield & Rusholme</li>
+                <li>• Withington & Burnage</li>
               </ul>
             </div>
             <p className="text-muted-foreground leading-relaxed">
-              Not sure if we cover your area? Give us a call—if you're within about 15 miles of Swindon town 
-              centre, we can usually help.
+              Not sure if we cover your area? Give us a call—if you're within about 15 miles of Manchester 
+              city centre, we can usually help.
             </p>
           </section>
 
           {/* Local Proof Section */}
           <section className="mb-12 bg-muted/50 -mx-4 px-4 py-8 rounded-lg">
             <h2 className="text-2xl md:text-3xl font-bold mb-4">
-              Swindon Drainage: What We See on the Ground
+              Manchester Drainage: What We See on the Ground
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              Swindon's housing stock is genuinely varied. You'll find Victorian terraces in Old Town with 
-              original clay pipes that are over 100 years old. Post-war council estates in areas like Penhill 
-              and Park North often have concrete or pitch-fibre drains—materials that were popular in the 
-              1960s and 70s but are now reaching the end of their lifespan.
+              Manchester's housing stock is genuinely varied. You'll find Victorian terraces in Didsbury and 
+              Chorlton with original clay pipes that are over 100 years old. Post-war council estates in areas 
+              like Wythenshawe and Moss Side often have concrete or pitch-fibre drains—materials that were 
+              popular in the 1960s and 70s but are now reaching the end of their lifespan.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              Newer developments like Wichelstowe and the Eastern Villages use modern plastic pipework that's 
+              Newer developments like those in Ancoats and MediaCityUK use modern plastic pipework that's 
               generally more durable, but installation quality can vary. We regularly attend new-build 
               properties where construction debris has been left in the drains or joints haven't been sealed 
               properly.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              Tree root problems are especially common in established areas with large gardens—Old Town, 
-              Lawn, and parts of West Swindon see a lot of call-outs for this. If you have mature trees 
+              Tree root problems are especially common in established areas with large gardens—Didsbury, 
+              Chorlton, and parts of South Manchester see a lot of call-outs for this. If you have mature trees 
               near your property and slow-draining outside drains, roots are often the culprit.
             </p>
           </section>
@@ -206,13 +206,13 @@ export function PillarContent() {
               Why Choose {BRAND.brandName}?
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              There are plenty of drainage companies advertising in Swindon—so why choose us? Here's what 
+              There are plenty of drainage companies advertising in Manchester—so why choose us? Here's what 
               sets us apart:
             </p>
             <ul className="space-y-3 text-muted-foreground mb-4">
               <li className="flex items-start gap-3">
                 <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                <span><strong>Genuinely local:</strong> We're based in Swindon, not a national call centre dispatching vans from miles away. You'll speak to someone who knows the area.</span>
+                <span><strong>Genuinely local:</strong> We're based in Manchester, not a national call centre dispatching vans from miles away. You'll speak to someone who knows the area.</span>
               </li>
               <li className="flex items-start gap-3">
                 <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5" />

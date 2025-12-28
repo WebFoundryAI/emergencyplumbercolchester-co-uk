@@ -1,25 +1,14 @@
-# Bot Prerendering Guide
+# Prerendering Guide
 
-This document describes how to implement prerendering for search engine and social media bots when using a CSR (Client-Side Rendered) React application like this one.
-
-> **Note**: Lovable does not provide built-in SSR or prerendering. This guide covers external proxy/CDN configuration that would be implemented at the hosting or CDN layer.
-
----
-
-## Overview
-
-Prerendering serves fully-rendered HTML to bots while regular users receive the standard SPA. This improves:
-- Indexation speed for search engines
-- Social media link previews
-- Core Web Vitals for bot measurements
+This document covers prerendering options for SEO optimization.
 
 ---
 
 ## Option 1: Prerender.io (Recommended)
 
 ### Setup
-1. Sign up at [prerender.io](https://prerender.io)
-2. Add your site URL: `https://swindonblockeddrains.co.uk`
+1. Sign up at https://prerender.io
+2. Add your site URL: `https://manchesterblockeddrains.co.uk`
 3. Configure your CDN/proxy to route bot traffic to Prerender.io
 
 ### User Agents to Prerender
@@ -113,7 +102,7 @@ The prerendered HTML must contain the **exact same canonical URL** as the client
 
 ### 1. Google Search Console - URL Inspection
 1. Go to [Google Search Console](https://search.google.com/search-console)
-2. Enter a URL: `https://swindonblockeddrains.co.uk/services/blocked-drains/`
+2. Enter a URL: `https://manchesterblockeddrains.co.uk/services/blocked-drains/`
 3. Click "Test Live URL"
 4. Click "View Tested Page" → "Screenshot" and "HTML"
 5. Verify:
@@ -137,53 +126,17 @@ The prerendered HTML must contain the **exact same canonical URL** as the client
 ```bash
 # Simulate Googlebot
 curl -A "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)" \
-  https://swindonblockeddrains.co.uk/services/blocked-drains/
-
-# Check for full HTML content, not just <div id="root"></div>
+  https://manchesterblockeddrains.co.uk/services/blocked-drains/
 ```
 
-### 5. Prerender.io Dashboard
-- Monitor cache hit rates
-- Check for rendering errors
-- Verify pages are being cached
-
 ---
 
-## Current Status (Without Prerendering)
+## Testing Checklist
 
-This site currently uses Client-Side Rendering (CSR). Google's crawler executes JavaScript and can index the content, but:
-- Indexing may be slightly delayed (Google's rendering queue)
-- Social media previews rely on static OG tags in `index.html`
-- Core Web Vitals measured by bots reflect JS execution time
-
-### Mitigation Already Implemented
-1. **Static OG/Twitter tags** in `index.html` for social previews
-2. **react-helmet-async** for per-route SEO metadata
-3. **JSON-LD schemas** on all key pages
-4. **Comprehensive sitemap** with all indexable URLs
-5. **Static `/llm.html`** for AI crawlers
-
----
-
-## Recommended Next Steps
-
-1. **Monitor GSC** - Check if pages are being indexed correctly
-2. **Review Core Web Vitals** - If bot scores are poor, consider prerendering
-3. **Evaluate Prerender.io** - Free tier available for testing
-4. **Test with real bot** - Use GSC URL Inspection to verify rendering
-
----
-
-## Cost Considerations
-
-| Solution | Cost | Complexity |
-|----------|------|------------|
-| No prerendering (current) | Free | None |
-| Prerender.io | $15-99/mo | Low |
-| Cloudflare Workers | $5/mo + usage | Medium |
-| Self-hosted Puppeteer | Server costs | High |
-
-For most sites, Google's JavaScript rendering is sufficient. Prerendering is recommended if:
-- Indexing is significantly delayed
-- Social previews are critical for marketing
-- Core Web Vitals scores from bots are poor
+- [ ] Homepage renders correctly for Googlebot
+- [ ] Service pages have correct meta tags in prerendered HTML
+- [ ] Location pages include LocalBusiness schema
+- [ ] Blog posts render full content
+- [ ] 404 pages return proper status code
+- [ ] Redirects work correctly for bots
+- [ ] Cache is refreshing at expected intervals

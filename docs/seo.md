@@ -1,15 +1,13 @@
-# SEO/GEO QA Checklist
-
-## Pre-Launch Verification
+# SEO Verification Checklist
 
 ### 1. Sitemap Verification
-- [ ] Fetch `https://swindonblockeddrains.co.uk/sitemap.xml` - confirm HTTP 200
+- [ ] Fetch `https://manchesterblockeddrains.co.uk/sitemap.xml` - confirm HTTP 200
 - [ ] Verify all `<url>` entries have `<loc>`, `<lastmod>`, `<changefreq>`, `<priority>`
 - [ ] Confirm `/llm.html` is included in sitemap
 - [ ] Check all URLs use consistent trailing slash format
 
 ### 2. Robots.txt Verification
-- [ ] Fetch `https://swindonblockeddrains.co.uk/robots.txt` - confirm HTTP 200
+- [ ] Fetch `https://manchesterblockeddrains.co.uk/robots.txt` - confirm HTTP 200
 - [ ] Verify `Sitemap:` directive points to correct absolute URL
 - [ ] Confirm GPTBot, PerplexityBot, Claude-Web are allowed
 - [ ] Confirm Google-Extended, CCBot are disallowed
@@ -28,7 +26,7 @@ Key pages to check:
 - Services `/services/`
 - Blocked Drains `/services/blocked-drains/`
 - Locations `/locations/`
-- Swindon `/locations/swindon/`
+- Manchester `/locations/manchester/`
 - Contact `/contact/`
 
 ### 4. Structured Data Verification
@@ -39,33 +37,24 @@ Key pages to check:
 - [ ] Check for no errors/warnings in structured data
 
 ### 5. LLM Page Verification
-- [ ] Fetch `https://swindonblockeddrains.co.uk/llm.html` - confirm HTTP 200
+- [ ] Fetch `https://manchesterblockeddrains.co.uk/llm.html` - confirm HTTP 200
 - [ ] Verify page is static HTML (no JS required to render content)
 - [ ] Confirm JSON-LD schemas are present and valid
 - [ ] Check all factual information matches main site
 
 ### 6. Google Search Console
-- [ ] Submit sitemap at `https://swindonblockeddrains.co.uk/sitemap.xml`
-- [ ] Use URL Inspection on homepage
-- [ ] Click "Test Live URL" → "View Tested Page"
-- [ ] Confirm rendered HTML contains main content
-- [ ] Check for any crawl errors or warnings
+- [ ] Submit sitemap at `https://manchesterblockeddrains.co.uk/sitemap.xml`
+- [ ] Verify ownership with google verification file
+- [ ] Check for crawl errors
+- [ ] Monitor index coverage
 
-### 7. Canonical Consistency
-- [ ] Test URLs with and without trailing slashes load correctly
-- [ ] Verify client-side normalizer redirects to canonical format
-- [ ] Confirm no redirect loops exist
+### 7. Performance
+- [ ] Check Core Web Vitals in PageSpeed Insights
+- [ ] Verify images are optimized and lazy-loaded
+- [ ] Confirm critical CSS is inlined
+- [ ] Test mobile rendering
 
-## Tools
-
-- **Google Search Console**: https://search.google.com/search-console
-- **Google Rich Results Test**: https://search.google.com/test/rich-results
-- **Schema Markup Validator**: https://validator.schema.org/
-- **Lighthouse**: Chrome DevTools → Lighthouse tab
-
-## Notes
-
-- Site uses Client-Side Rendering (CSR) - Google renders JS content
-- Static OG tags in index.html serve as baseline for non-JS crawlers
-- react-helmet-async provides per-route metadata for JS-capable crawlers
-- Trailing slash convention: all non-root URLs end with `/`
+### 8. Local SEO
+- [ ] Verify NAP (Name, Address, Phone) consistency
+- [ ] Check Google Business Profile alignment
+- [ ] Confirm service area pages are indexed

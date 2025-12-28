@@ -4,37 +4,37 @@ import { Button } from "@/components/ui/button";
 import { ExternalLink, CheckCircle, AlertCircle } from "lucide-react";
 import { useState } from "react";
 
-const BASE_URL = "https://swindonblockeddrains.co.uk";
+const BASE_URL = "https://manchesterblockeddrains.co.uk";
 
 const TEST_REDIRECTS = [
   {
-    legacy: "/location/swindon/",
-    expected: "/locations/swindon",
+    legacy: "/location/manchester/",
+    expected: "/locations/manchester",
     description: "Basic location redirect with trailing slash",
   },
   {
-    legacy: "/location/swindon",
-    expected: "/locations/swindon",
+    legacy: "/location/manchester",
+    expected: "/locations/manchester",
     description: "Basic location redirect without trailing slash",
   },
   {
-    legacy: "/location/swindon/blocked-drains/blocked-toilet",
-    expected: "/locations/swindon/blocked-drains/blocked-toilet",
+    legacy: "/location/manchester/blocked-drains/blocked-toilet",
+    expected: "/locations/manchester/blocked-drains/blocked-toilet",
     description: "Nested sub-service redirect",
   },
   {
-    legacy: "/location/highworth/drain-jetting/domestic-jetting?utm=test",
-    expected: "/locations/highworth/drain-jetting/domestic-jetting?utm=test",
+    legacy: "/location/stockport/drain-jetting/domestic-jetting?utm=test",
+    expected: "/locations/stockport/drain-jetting/domestic-jetting?utm=test",
     description: "Redirect with query parameters",
   },
   {
-    legacy: "/location/royal-wootton-bassett",
-    expected: "/locations/royal-wootton-bassett",
-    description: "Location with hyphenated name",
+    legacy: "/location/salford",
+    expected: "/locations/salford",
+    description: "Location redirect",
   },
   {
-    legacy: "/location/cricklade/cctv-drain-surveys",
-    expected: "/locations/cricklade/cctv-drain-surveys",
+    legacy: "/location/didsbury/cctv-drain-surveys",
+    expected: "/locations/didsbury/cctv-drain-surveys",
     description: "Service in location redirect",
   },
 ];
@@ -187,7 +187,7 @@ export default function RedirectTest() {
                     from JavaScript. Use browser DevTools or command-line tools like curl to verify:
                   </p>
                   <pre className="mt-2 bg-amber-100 dark:bg-amber-900/30 p-2 rounded text-xs overflow-x-auto">
-                    curl -I https://swindonblockeddrains.co.uk/location/swindon/
+                    curl -I https://manchesterblockeddrains.co.uk/location/manchester/
                   </pre>
                 </div>
               </div>

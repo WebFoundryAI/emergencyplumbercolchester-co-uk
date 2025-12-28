@@ -31,7 +31,7 @@ const Locations = () => {
           <div className="container-wide px-4 text-center text-primary-foreground">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">Areas We Cover</h1>
             <p className="text-lg text-primary-foreground/80 max-w-3xl mx-auto">
-              Professional Drainage Services Across Swindon &amp; Surrounding Areas
+              Professional Drainage Services Across Manchester &amp; Greater Manchester
             </p>
           </div>
         </div>
@@ -43,7 +43,7 @@ const Locations = () => {
           <Breadcrumbs items={breadcrumbItems} />
           <div className="max-w-4xl mx-auto text-center">
             <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed mb-6">
-              {BRAND.brandName} is proud to serve homeowners and businesses throughout {BRAND.serviceAreaLabel} and the surrounding villages. Whether you're dealing with a blocked drain in central Swindon or need emergency drainage services in Royal Wootton Bassett, our experienced team is just a phone call away.
+              {BRAND.brandName} is proud to serve homeowners and businesses throughout {BRAND.serviceAreaLabel} and the surrounding areas. Whether you're dealing with a blocked drain in central Manchester or need emergency drainage services in Salford, our experienced team is just a phone call away.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
               We offer fast response times across all our service areas, with most call-outs attended within 1-2 hours. Our local knowledge means we understand the specific drainage challenges faced by properties in different parts of {BRAND.serviceAreaLabel}.
@@ -52,319 +52,319 @@ const Locations = () => {
         </div>
       </section>
 
-      {/* Swindon Section */}
+      {/* Manchester Section */}
       <section className="section-padding bg-muted/30">
         <div className="container-wide px-4">
           <div className="max-w-4xl mx-auto">
             <div className="flex items-center gap-3 mb-6">
               <MapPin className="h-8 w-8 text-primary" />
-              <h2 className="text-3xl md:text-4xl font-bold">Swindon</h2>
+              <h2 className="text-3xl md:text-4xl font-bold">Manchester</h2>
             </div>
             
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              As our home base, Swindon is at the heart of everything we do. From the town centre to the surrounding residential areas including Old Town, Walcot, Stratton, and Gorse Hill, we provide comprehensive drainage solutions for properties of all sizes. Our team has extensive experience working with both Victorian terraces and modern developments, understanding the unique drainage systems each presents.
+              As our home base, Manchester is at the heart of everything we do. From the city centre to the surrounding residential areas including Didsbury, Chorlton, Fallowfield, and Rusholme, we provide comprehensive drainage solutions for properties of all sizes. Our team has extensive experience working with both Victorian terraces and modern developments, understanding the unique drainage systems each presents.
             </p>
             
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-              Swindon's mix of older clay pipes and modern plastic drainage means you need a team that can handle any situation. Whether it's tree root ingress in an older property or a simple blockage in a new build, we've got the equipment and expertise to resolve it quickly.
+              Manchester's mix of older clay pipes and modern plastic drainage means you need a team that can handle any situation. Whether it's tree root ingress in an older property or a simple blockage in a new build, we've got the equipment and expertise to resolve it quickly.
             </p>
 
             <div className="grid md:grid-cols-3 gap-4 mb-8">
               <Link 
-                to="/locations/swindon/blocked-drains" 
+                to="/locations/manchester/blocked-drains" 
                 className="p-4 bg-background rounded-lg border hover:border-primary transition-colors group"
               >
-                <h3 className="font-semibold text-lg group-hover:text-primary transition-colors">Blocked Drains Swindon</h3>
-                <p className="text-sm text-muted-foreground mt-2">Fast unblocking for homes &amp; businesses across Swindon</p>
+                <h3 className="font-semibold text-lg group-hover:text-primary transition-colors">Blocked Drains Manchester</h3>
+                <p className="text-sm text-muted-foreground mt-2">Fast unblocking for homes &amp; businesses across Manchester</p>
               </Link>
               
               <Link 
-                to="/locations/swindon/cctv-drain-surveys" 
+                to="/locations/manchester/cctv-drain-surveys" 
                 className="p-4 bg-background rounded-lg border hover:border-primary transition-colors group"
               >
-                <h3 className="font-semibold text-lg group-hover:text-primary transition-colors">CCTV Surveys Swindon</h3>
+                <h3 className="font-semibold text-lg group-hover:text-primary transition-colors">CCTV Surveys Manchester</h3>
                 <p className="text-sm text-muted-foreground mt-2">Professional drain inspections with detailed reports</p>
               </Link>
               
               <Link 
-                to="/locations/swindon/emergency-drain-services" 
+                to="/locations/manchester/emergency-drain-services" 
                 className="p-4 bg-background rounded-lg border hover:border-primary transition-colors group"
               >
-                <h3 className="font-semibold text-lg group-hover:text-primary transition-colors">Emergency Services Swindon</h3>
+                <h3 className="font-semibold text-lg group-hover:text-primary transition-colors">Emergency Services Manchester</h3>
                 <p className="text-sm text-muted-foreground mt-2">24/7 emergency drainage call-outs available</p>
               </Link>
             </div>
 
             <Link 
-              to="/locations/swindon" 
+              to="/locations/manchester" 
               className="inline-flex items-center gap-2 text-primary font-semibold hover:underline"
             >
-              View all Swindon drainage services →
+              View all Manchester drainage services →
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Royal Wootton Bassett Section */}
+      {/* Salford Section */}
       <section className="section-padding">
         <div className="container-wide px-4">
           <div className="max-w-4xl mx-auto">
             <div className="flex items-center gap-3 mb-6">
               <MapPin className="h-8 w-8 text-primary" />
-              <h2 className="text-3xl md:text-4xl font-bold">Royal Wootton Bassett</h2>
+              <h2 className="text-3xl md:text-4xl font-bold">Salford</h2>
             </div>
             
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              Royal Wootton Bassett is a historic market town with a charming High Street and a wonderful community spirit. We're proud to serve residents and businesses throughout the town, from the older properties around the High Street to the newer developments on the outskirts.
+              Salford is a vibrant city with a mix of historic neighbourhoods and modern developments like MediaCityUK. We're proud to serve residents and businesses throughout Salford, from the traditional terraces in Eccles to the contemporary apartments in Salford Quays.
             </p>
             
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-              The town's growth over recent years means a mix of drainage systems, and we're fully equipped to handle everything from traditional clay pipe repairs to modern drainage installations. Our local presence means rapid response times for Royal Wootton Bassett residents – usually within the hour for emergencies.
+              The city's growth over recent years means a mix of drainage systems, and we're fully equipped to handle everything from traditional clay pipe repairs to modern drainage installations. Our local presence means rapid response times for Salford residents – usually within the hour for emergencies.
             </p>
 
             <div className="grid md:grid-cols-3 gap-4 mb-8">
               <Link 
-                to="/location/royal-wootton-bassett/blocked-drains" 
+                to="/locations/salford/blocked-drains" 
                 className="p-4 bg-muted/30 rounded-lg border hover:border-primary transition-colors group"
               >
-                <h3 className="font-semibold text-lg group-hover:text-primary transition-colors">Blocked Drains RWB</h3>
-                <p className="text-sm text-muted-foreground mt-2">Professional drain clearance throughout the town</p>
+                <h3 className="font-semibold text-lg group-hover:text-primary transition-colors">Blocked Drains Salford</h3>
+                <p className="text-sm text-muted-foreground mt-2">Professional drain clearance throughout the city</p>
               </Link>
               
               <Link 
-                to="/location/royal-wootton-bassett/cctv-drain-surveys" 
+                to="/locations/salford/cctv-drain-surveys" 
                 className="p-4 bg-muted/30 rounded-lg border hover:border-primary transition-colors group"
               >
-                <h3 className="font-semibold text-lg group-hover:text-primary transition-colors">CCTV Surveys RWB</h3>
+                <h3 className="font-semibold text-lg group-hover:text-primary transition-colors">CCTV Surveys Salford</h3>
                 <p className="text-sm text-muted-foreground mt-2">Detailed drain inspections for homebuyers &amp; landlords</p>
               </Link>
               
               <Link 
-                to="/location/royal-wootton-bassett/emergency-drain-services" 
+                to="/locations/salford/emergency-drain-services" 
                 className="p-4 bg-muted/30 rounded-lg border hover:border-primary transition-colors group"
               >
-                <h3 className="font-semibold text-lg group-hover:text-primary transition-colors">Emergency Services RWB</h3>
-                <p className="text-sm text-muted-foreground mt-2">Fast emergency response across Royal Wootton Bassett</p>
+                <h3 className="font-semibold text-lg group-hover:text-primary transition-colors">Emergency Services Salford</h3>
+                <p className="text-sm text-muted-foreground mt-2">Fast emergency response across Salford</p>
               </Link>
             </div>
 
             <Link 
-              to="/location/royal-wootton-bassett" 
+              to="/locations/salford" 
               className="inline-flex items-center gap-2 text-primary font-semibold hover:underline"
             >
-              View all Royal Wootton Bassett drainage services →
+              View all Salford drainage services →
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Highworth Section */}
+      {/* Stockport Section */}
       <section className="section-padding bg-muted/30">
         <div className="container-wide px-4">
           <div className="max-w-4xl mx-auto">
             <div className="flex items-center gap-3 mb-6">
               <MapPin className="h-8 w-8 text-primary" />
-              <h2 className="text-3xl md:text-4xl font-bold">Highworth</h2>
+              <h2 className="text-3xl md:text-4xl font-bold">Stockport</h2>
             </div>
             
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              Perched on a hill northeast of Swindon, Highworth is a picturesque market town with a rich history dating back centuries. We're proud to serve this charming community, from the historic High Street properties to the surrounding farmhouses and newer residential developments.
+              Located south of Manchester, Stockport is a historic market town with a rich industrial heritage. We're proud to serve this charming community, from the historic town centre properties to the surrounding residential areas in Cheadle, Bramhall, and Hazel Grove.
             </p>
             
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-              Highworth's elevated position and mix of older stone buildings mean drainage systems here face unique challenges. Our team understands the local infrastructure and can quickly diagnose and resolve issues, whether it's a blocked kitchen drain or a more complex sewage problem.
+              Stockport's mix of Victorian properties and newer developments means drainage systems here face varied challenges. Our team understands the local infrastructure and can quickly diagnose and resolve issues, whether it's a blocked kitchen drain or a more complex sewage problem.
             </p>
 
             <div className="grid md:grid-cols-3 gap-4 mb-8">
               <Link 
-                to="/location/highworth/blocked-drains" 
+                to="/locations/stockport/blocked-drains" 
                 className="p-4 bg-background rounded-lg border hover:border-primary transition-colors group"
               >
-                <h3 className="font-semibold text-lg group-hover:text-primary transition-colors">Blocked Drains Highworth</h3>
-                <p className="text-sm text-muted-foreground mt-2">Fast drain clearance for Highworth homes</p>
+                <h3 className="font-semibold text-lg group-hover:text-primary transition-colors">Blocked Drains Stockport</h3>
+                <p className="text-sm text-muted-foreground mt-2">Fast drain clearance for Stockport homes</p>
               </Link>
               
               <Link 
-                to="/location/highworth/cctv-drain-surveys" 
+                to="/locations/stockport/cctv-drain-surveys" 
                 className="p-4 bg-background rounded-lg border hover:border-primary transition-colors group"
               >
-                <h3 className="font-semibold text-lg group-hover:text-primary transition-colors">CCTV Surveys Highworth</h3>
+                <h3 className="font-semibold text-lg group-hover:text-primary transition-colors">CCTV Surveys Stockport</h3>
                 <p className="text-sm text-muted-foreground mt-2">Professional inspections with video reports</p>
               </Link>
               
               <Link 
-                to="/location/highworth/emergency-drain-services" 
+                to="/locations/stockport/emergency-drain-services" 
                 className="p-4 bg-background rounded-lg border hover:border-primary transition-colors group"
               >
-                <h3 className="font-semibold text-lg group-hover:text-primary transition-colors">Emergency Services Highworth</h3>
+                <h3 className="font-semibold text-lg group-hover:text-primary transition-colors">Emergency Services Stockport</h3>
                 <p className="text-sm text-muted-foreground mt-2">24/7 emergency call-outs available</p>
               </Link>
             </div>
 
             <Link 
-              to="/location/highworth" 
+              to="/locations/stockport" 
               className="inline-flex items-center gap-2 text-primary font-semibold hover:underline"
             >
-              View all Highworth drainage services →
+              View all Stockport drainage services →
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Purton Section */}
+      {/* Bolton Section */}
       <section className="section-padding">
         <div className="container-wide px-4">
           <div className="max-w-4xl mx-auto">
             <div className="flex items-center gap-3 mb-6">
               <MapPin className="h-8 w-8 text-primary" />
-              <h2 className="text-3xl md:text-4xl font-bold">Purton</h2>
+              <h2 className="text-3xl md:text-4xl font-bold">Bolton</h2>
             </div>
             
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              Purton is one of Wiltshire's largest villages, known for its friendly community and beautiful countryside setting. Located just northwest of Swindon, we provide comprehensive drainage services to residents throughout the village and surrounding rural properties.
+              Bolton is one of Greater Manchester's largest towns, known for its friendly community and strong industrial heritage. Located northwest of Manchester, we provide comprehensive drainage services to residents throughout the town and surrounding areas like Horwich and Farnworth.
             </p>
             
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-              Many Purton properties rely on older drainage systems, and some rural homes have septic tanks or private sewage treatment plants. Our experienced team can handle all types of drainage work, from simple unblocking to more specialist septic tank services.
+              Many Bolton properties rely on older drainage systems, and some properties have complex pipe networks dating back to the Victorian era. Our experienced team can handle all types of drainage work, from simple unblocking to more complex repair and relining services.
             </p>
 
             <div className="grid md:grid-cols-3 gap-4 mb-8">
               <Link 
-                to="/location/purton/blocked-drains" 
+                to="/locations/bolton/blocked-drains" 
                 className="p-4 bg-muted/30 rounded-lg border hover:border-primary transition-colors group"
               >
-                <h3 className="font-semibold text-lg group-hover:text-primary transition-colors">Blocked Drains Purton</h3>
-                <p className="text-sm text-muted-foreground mt-2">Reliable drain unblocking for Purton</p>
+                <h3 className="font-semibold text-lg group-hover:text-primary transition-colors">Blocked Drains Bolton</h3>
+                <p className="text-sm text-muted-foreground mt-2">Reliable drain unblocking for Bolton</p>
               </Link>
               
               <Link 
-                to="/location/purton/cctv-drain-surveys" 
+                to="/locations/bolton/cctv-drain-surveys" 
                 className="p-4 bg-muted/30 rounded-lg border hover:border-primary transition-colors group"
               >
-                <h3 className="font-semibold text-lg group-hover:text-primary transition-colors">CCTV Surveys Purton</h3>
+                <h3 className="font-semibold text-lg group-hover:text-primary transition-colors">CCTV Surveys Bolton</h3>
                 <p className="text-sm text-muted-foreground mt-2">Detailed drain camera inspections</p>
               </Link>
               
               <Link 
-                to="/location/purton/emergency-drain-services" 
+                to="/locations/bolton/emergency-drain-services" 
                 className="p-4 bg-muted/30 rounded-lg border hover:border-primary transition-colors group"
               >
-                <h3 className="font-semibold text-lg group-hover:text-primary transition-colors">Emergency Services Purton</h3>
+                <h3 className="font-semibold text-lg group-hover:text-primary transition-colors">Emergency Services Bolton</h3>
                 <p className="text-sm text-muted-foreground mt-2">Rapid emergency response available</p>
               </Link>
             </div>
 
             <Link 
-              to="/location/purton" 
+              to="/locations/bolton" 
               className="inline-flex items-center gap-2 text-primary font-semibold hover:underline"
             >
-              View all Purton drainage services →
+              View all Bolton drainage services →
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Cricklade Section */}
+      {/* Oldham Section */}
       <section className="section-padding bg-muted/30">
         <div className="container-wide px-4">
           <div className="max-w-4xl mx-auto">
             <div className="flex items-center gap-3 mb-6">
               <MapPin className="h-8 w-8 text-primary" />
-              <h2 className="text-3xl md:text-4xl font-bold">Cricklade</h2>
+              <h2 className="text-3xl md:text-4xl font-bold">Oldham</h2>
             </div>
             
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              Cricklade holds the distinction of being Wiltshire's oldest borough, with a history stretching back to Saxon times. This charming town on the upper Thames is home to beautiful period properties and a strong sense of community. We're delighted to serve Cricklade residents with professional drainage solutions.
+              Oldham sits on the edge of the Pennines, northeast of Manchester. This historic mill town is home to a mix of traditional stone-built terraces and modern housing developments. We're delighted to serve Oldham residents with professional drainage solutions.
             </p>
             
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-              The town's proximity to the River Thames means some properties face particular drainage challenges, especially during wet weather. Our team has the expertise to deal with everything from routine blockages to more complex flood-related drainage issues.
+              The town's hillside location and mix of older stone buildings mean drainage systems here face particular challenges, especially during wet weather. Our team has the expertise to deal with everything from routine blockages to more complex drainage issues.
             </p>
 
             <div className="grid md:grid-cols-3 gap-4 mb-8">
               <Link 
-                to="/location/cricklade/blocked-drains" 
+                to="/locations/oldham/blocked-drains" 
                 className="p-4 bg-background rounded-lg border hover:border-primary transition-colors group"
               >
-                <h3 className="font-semibold text-lg group-hover:text-primary transition-colors">Blocked Drains Cricklade</h3>
-                <p className="text-sm text-muted-foreground mt-2">Expert drain clearance in Cricklade</p>
+                <h3 className="font-semibold text-lg group-hover:text-primary transition-colors">Blocked Drains Oldham</h3>
+                <p className="text-sm text-muted-foreground mt-2">Expert drain clearance in Oldham</p>
               </Link>
               
               <Link 
-                to="/location/cricklade/cctv-drain-surveys" 
+                to="/locations/oldham/cctv-drain-surveys" 
                 className="p-4 bg-background rounded-lg border hover:border-primary transition-colors group"
               >
-                <h3 className="font-semibold text-lg group-hover:text-primary transition-colors">CCTV Surveys Cricklade</h3>
+                <h3 className="font-semibold text-lg group-hover:text-primary transition-colors">CCTV Surveys Oldham</h3>
                 <p className="text-sm text-muted-foreground mt-2">Comprehensive drain inspections</p>
               </Link>
               
               <Link 
-                to="/location/cricklade/emergency-drain-services" 
+                to="/locations/oldham/emergency-drain-services" 
                 className="p-4 bg-background rounded-lg border hover:border-primary transition-colors group"
               >
-                <h3 className="font-semibold text-lg group-hover:text-primary transition-colors">Emergency Services Cricklade</h3>
+                <h3 className="font-semibold text-lg group-hover:text-primary transition-colors">Emergency Services Oldham</h3>
                 <p className="text-sm text-muted-foreground mt-2">24/7 emergency drainage help</p>
               </Link>
             </div>
 
             <Link 
-              to="/location/cricklade" 
+              to="/locations/oldham" 
               className="inline-flex items-center gap-2 text-primary font-semibold hover:underline"
             >
-              View all Cricklade drainage services →
+              View all Oldham drainage services →
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Wroughton Section */}
+      {/* Didsbury Section */}
       <section className="section-padding">
         <div className="container-wide px-4">
           <div className="max-w-4xl mx-auto">
             <div className="flex items-center gap-3 mb-6">
               <MapPin className="h-8 w-8 text-primary" />
-              <h2 className="text-3xl md:text-4xl font-bold">Wroughton</h2>
+              <h2 className="text-3xl md:text-4xl font-bold">Didsbury</h2>
             </div>
             
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              Wroughton is a large village on the southern edge of Swindon, nestled at the foot of the Marlborough Downs. With its mix of traditional cottages and modern housing estates, Wroughton has a diverse range of drainage systems that we're well-equipped to service.
+              Didsbury is one of South Manchester's most desirable suburbs, known for its village atmosphere, excellent restaurants, and beautiful Victorian properties. We provide comprehensive drainage services throughout Didsbury, West Didsbury, and East Didsbury.
             </p>
             
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-              From the older properties in the village centre to the newer developments, our team provides fast, professional drainage services throughout Wroughton. We're familiar with the local infrastructure and can respond quickly to any drainage emergency.
+              From the grand Victorian villas to the modern apartments, our team provides fast, professional drainage services throughout Didsbury. We're familiar with the local infrastructure and can respond quickly to any drainage emergency.
             </p>
 
             <div className="grid md:grid-cols-3 gap-4 mb-8">
               <Link 
-                to="/location/wroughton/blocked-drains" 
+                to="/locations/didsbury/blocked-drains" 
                 className="p-4 bg-muted/30 rounded-lg border hover:border-primary transition-colors group"
               >
-                <h3 className="font-semibold text-lg group-hover:text-primary transition-colors">Blocked Drains Wroughton</h3>
-                <p className="text-sm text-muted-foreground mt-2">Quick drain unblocking in Wroughton</p>
+                <h3 className="font-semibold text-lg group-hover:text-primary transition-colors">Blocked Drains Didsbury</h3>
+                <p className="text-sm text-muted-foreground mt-2">Quick drain unblocking in Didsbury</p>
               </Link>
               
               <Link 
-                to="/location/wroughton/cctv-drain-surveys" 
+                to="/locations/didsbury/cctv-drain-surveys" 
                 className="p-4 bg-muted/30 rounded-lg border hover:border-primary transition-colors group"
               >
-                <h3 className="font-semibold text-lg group-hover:text-primary transition-colors">CCTV Surveys Wroughton</h3>
+                <h3 className="font-semibold text-lg group-hover:text-primary transition-colors">CCTV Surveys Didsbury</h3>
                 <p className="text-sm text-muted-foreground mt-2">Professional drain camera surveys</p>
               </Link>
               
               <Link 
-                to="/location/wroughton/emergency-drain-services" 
+                to="/locations/didsbury/emergency-drain-services" 
                 className="p-4 bg-muted/30 rounded-lg border hover:border-primary transition-colors group"
               >
-                <h3 className="font-semibold text-lg group-hover:text-primary transition-colors">Emergency Services Wroughton</h3>
+                <h3 className="font-semibold text-lg group-hover:text-primary transition-colors">Emergency Services Didsbury</h3>
                 <p className="text-sm text-muted-foreground mt-2">Fast emergency response times</p>
               </Link>
             </div>
 
             <Link 
-              to="/location/wroughton" 
+              to="/locations/didsbury" 
               className="inline-flex items-center gap-2 text-primary font-semibold hover:underline"
             >
-              View all Wroughton drainage services →
+              View all Didsbury drainage services →
             </Link>
           </div>
         </div>
@@ -376,7 +376,7 @@ const Locations = () => {
           <div className="max-w-4xl mx-auto text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Other Areas We Serve</h2>
             <p className="text-lg text-muted-foreground">
-              Beyond our main service areas, we cover numerous villages and towns across {BRAND.serviceAreaLabel}. Click on any location below to see our full range of services available in your area.
+              Beyond our main service areas, we cover numerous towns and neighbourhoods across {BRAND.serviceAreaLabel}. Click on any location below to see our full range of services available in your area.
             </p>
           </div>
         </div>
@@ -432,7 +432,7 @@ const Locations = () => {
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-2xl md:text-3xl font-bold mb-4">Ready to Get Your Drains Sorted?</h2>
             <p className="text-lg text-muted-foreground mb-6">
-              Whether you're in Swindon, Royal Wootton Bassett, or the surrounding villages, our local team is just a phone call away.
+              Whether you're in Manchester, Salford, or anywhere across Greater Manchester, our local team is just a phone call away.
             </p>
             <Link 
               to="/contact" 
