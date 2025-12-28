@@ -53,19 +53,23 @@ const SERVICES = [
 ];
 
 const LOCATIONS = [
-  { slug: "swindon" },
-  { slug: "royal-wootton-bassett" },
-  { slug: "highworth" },
-  { slug: "purton" },
-  { slug: "cricklade" },
-  { slug: "wroughton" },
+  { slug: "manchester" },
+  { slug: "salford" },
+  { slug: "stockport" },
+  { slug: "altrincham" },
+  { slug: "bolton" },
+  { slug: "oldham" },
+  { slug: "rochdale" },
+  { slug: "sale" },
+  { slug: "didsbury" },
+  { slug: "chorlton" },
 ];
 
-const BASE_URL = "https://swindonblockeddrains.co.uk";
+const BASE_URL = "https://manchesterblockeddrains.co.uk";
 
 function formatDate(_date: Date): string {
   // Return current date for sitemap freshness
-  return "2025-12-24";
+  return "2025-12-28";
 }
 
 function generateUrlEntry(

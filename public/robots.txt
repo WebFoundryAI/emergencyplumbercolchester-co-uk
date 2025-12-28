@@ -1,5 +1,5 @@
-# Blocked Drains Swindon - robots.txt
-# https://swindonblockeddrains.co.uk
+# Blocked Drains Manchester - robots.txt
+# https://manchesterblockeddrains.co.uk
 
 # Standard search crawlers
 User-agent: Googlebot
@@ -53,4 +53,4 @@ Disallow: /login
 Disallow: /reset-password
 
 # Sitemap location
-Sitemap: https://swindonblockeddrains.co.uk/sitemap.xml
+Sitemap: https://manchesterblockeddrains.co.uk/sitemap.xml

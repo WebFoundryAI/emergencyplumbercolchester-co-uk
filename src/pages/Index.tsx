@@ -4,7 +4,7 @@ import { HeroWithForm } from "@/components/hero/HeroWithForm";
 import { ServicesGrid } from "@/components/sections/ServicesGrid";
 import { LocationsGrid } from "@/components/sections/LocationsGrid";
 import { TestimonialsSection, testimonials } from "@/components/sections/TestimonialsSection";
-import { SwindonFAQSection, swindonFaqs } from "@/components/sections/SwindonFAQSection";
+import { ManchesterFAQSection, manchesterFaqs } from "@/components/sections/ManchesterFAQSection";
 import { CTASection } from "@/components/sections/CTASection";
 import { TrustBadges } from "@/components/sections/TrustBadges";
 import { GuaranteesSection } from "@/components/sections/GuaranteesSection";
@@ -41,7 +41,7 @@ const Index = () => {
           generateLocalBusinessSchema(),
           generateAggregateRatingSchema(testimonials),
           ...generateReviewSchema(testimonials),
-          generateFAQSchema(swindonFaqs),
+          generateFAQSchema(manchesterFaqs),
         ]}
       />
 
@@ -103,7 +103,7 @@ const Index = () => {
         <GuaranteesSection />
       </div>
       <div className="content-visibility-auto">
-        <SwindonFAQSection />
+        <ManchesterFAQSection />
       </div>
       <div className="content-visibility-auto">
         <CTASection />

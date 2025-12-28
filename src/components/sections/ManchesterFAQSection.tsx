@@ -5,22 +5,22 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-const SWINDON_FAQS = [
+const MANCHESTER_FAQS = [
   {
-    question: "How much does it cost to unblock a drain in Swindon?",
+    question: "How much does it cost to unblock a drain in Manchester?",
     answer: "Most straightforward drain unblocking jobs cost between £80 and £150. The exact price depends on the type of blockage and how accessible your drains are. We always give you a fixed quote before we start any work—no surprises on your bill."
   },
   {
     question: "How quickly can you get to me in an emergency?",
-    answer: "For emergency call-outs in Swindon, we typically arrive within 60–90 minutes. We operate 24/7 including evenings, weekends, and bank holidays, with no extra charge for out-of-hours calls."
+    answer: "For emergency call-outs in Manchester, we typically arrive within 60–90 minutes. We operate 24/7 including evenings, weekends, and bank holidays, with no extra charge for out-of-hours calls."
   },
   {
     question: "Who is responsible for blocked drains outside my property?",
-    answer: "If the blockage is in a private drain that only serves your property, it's your responsibility. If it's in a shared sewer or lateral drain (one that connects multiple properties to the public sewer), Thames Water is responsible. We can help you identify which applies and advise on next steps."
+    answer: "If the blockage is in a private drain that only serves your property, it's your responsibility. If it's in a shared sewer or lateral drain (one that connects multiple properties to the public sewer), United Utilities is responsible. We can help you identify which applies and advise on next steps."
   },
   {
-    question: "Do you cover Old Town, West Swindon, and Wichelstowe?",
-    answer: "Yes—we cover all areas of Swindon borough including Old Town, West Swindon, Wichelstowe, Highworth, Wroughton, Blunsdon, Royal Wootton Bassett, and surrounding villages. If you're within about 15 miles of Swindon town centre, we can help."
+    question: "Do you cover Salford, Stockport, and Didsbury?",
+    answer: "Yes—we cover all areas of Greater Manchester including Salford, Stockport, Didsbury, Chorlton, Altrincham, Bolton, Oldham, Rochdale, Sale, and surrounding areas. If you're within about 15 miles of Manchester city centre, we can help."
   },
   {
     question: "Do I need a CCTV survey, or can you just unblock the drain?",
@@ -32,21 +32,21 @@ const SWINDON_FAQS = [
   }
 ];
 
-export function SwindonFAQSection() {
+export function ManchesterFAQSection() {
   return (
     <section className="section-padding bg-muted/30">
       <div className="container-narrow px-4">
         <div className="text-center mb-12">
           <h2 className="text-2xl md:text-3xl font-bold mb-4">
-            Frequently Asked Questions About Blocked Drains in Swindon
+            Frequently Asked Questions About Blocked Drains in Manchester
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Common questions from Swindon homeowners about our drainage services.
+            Common questions from Manchester homeowners about our drainage services.
           </p>
         </div>
 
         <Accordion type="single" collapsible className="w-full">
-          {SWINDON_FAQS.map((faq, index) => (
+          {MANCHESTER_FAQS.map((faq, index) => (
             <AccordionItem key={index} value={`item-${index}`}>
               <AccordionTrigger className="text-left font-semibold">
                 {faq.question}
@@ -63,4 +63,4 @@ export function SwindonFAQSection() {
 }
 
 // Export FAQs for schema generation
-export const swindonFaqs = SWINDON_FAQS;
+export const manchesterFaqs = MANCHESTER_FAQS;

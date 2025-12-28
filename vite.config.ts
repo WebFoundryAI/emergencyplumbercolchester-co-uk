@@ -53,9 +53,9 @@ export default defineConfig(({ mode }) => ({
       injectRegister: "script-defer",
       includeAssets: ["favicon.png", "og/*.jpg", "images/*.jpg", "sitemap.xml", "robots.txt"],
       manifest: {
-        name: "Blocked Drains Swindon",
+        name: "Blocked Drains Manchester",
         short_name: "Drain Help",
-        description: "Professional drain unblocking and CCTV surveys in Swindon. 24/7 emergency service.",
+        description: "Professional drain unblocking and CCTV surveys in Manchester. 24/7 emergency service.",
         theme_color: "#1565a8",
         background_color: "#f5f7fa",
         display: "standalone",
