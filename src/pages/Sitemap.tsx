@@ -31,12 +31,13 @@ const Sitemap = () => {
 
   const staticPages = [
     { url: "/", name: "Home", priority: "1.0" },
-    { url: "/services", name: "Services", priority: "0.9" },
-    { url: "/locations", name: "Areas", priority: "0.9" },
-    { url: "/about", name: "About", priority: "0.7" },
-    { url: "/contact", name: "Contact", priority: "0.8" },
+    { url: "/services", name: "All Services", priority: "0.9" },
+    { url: "/locations", name: "All Areas", priority: "0.9" },
+    { url: "/about", name: "About Us", priority: "0.7" },
+    { url: "/contact", name: "Contact Us", priority: "0.8" },
     { url: "/faq", name: "FAQ", priority: "0.6" },
     { url: "/blog", name: "Blog", priority: "0.7" },
+    { url: "/llm.html", name: "AI/LLM Information", priority: "0.5" },
     { url: "/privacy", name: "Privacy Policy", priority: "0.3" },
     { url: "/terms", name: "Terms & Conditions", priority: "0.3" },
     { url: "/cookies", name: "Cookie Policy", priority: "0.3" },
@@ -115,7 +116,8 @@ const Sitemap = () => {
       />
       <section className="section-padding">
         <div className="container-wide px-4">
-          <h1 className="text-3xl font-bold mb-8">Sitemap</h1>
+          <h1 className="text-3xl font-bold mb-2">Sitemap</h1>
+          <p className="text-muted-foreground mb-8">Last updated: 31 December 2025</p>
 
         <section className="mb-8">
           <h2 className="text-xl font-semibold mb-4">Main Pages</h2>
@@ -225,6 +227,11 @@ const Sitemap = () => {
 
           <div className="text-sm text-muted-foreground mt-8 pt-8 border-t">
             <p>Total pages: {totalPages}</p>
+            <p className="mt-2">
+              <a href="/sitemap.xml" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">
+                View XML Sitemap
+              </a>
+            </p>
           </div>
         </div>
       </section>
