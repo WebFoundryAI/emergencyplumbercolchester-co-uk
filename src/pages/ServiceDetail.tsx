@@ -1,6 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
-import { LeadForm } from "@/components/forms/LeadForm";
+import { LazyLeadForm } from "@/components/lazy/LazyLeadForm";
 import { CTASection } from "@/components/sections/CTASection";
 import { AIContentBlock } from "@/components/ai/AIContentBlock";
 import { SchemaScript } from "@/components/seo/SchemaScript";
@@ -203,7 +203,7 @@ const ServiceDetail = () => {
             <div>
               <div className="bg-card p-6 rounded-xl card-elevated sticky top-24">
                 <h3 className="text-xl font-bold mb-4">Get a Quote</h3>
-                <LeadForm
+                <LazyLeadForm
                   sourcePage={`service-${service.slug}`}
                   defaultService={service.slug}
                 />

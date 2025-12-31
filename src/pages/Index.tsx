@@ -1,13 +1,7 @@
 import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { HeroWithForm } from "@/components/hero/HeroWithForm";
-import { ServicesGrid } from "@/components/sections/ServicesGrid";
-import { LocationsGrid } from "@/components/sections/LocationsGrid";
-import { TestimonialsSection, testimonials } from "@/components/sections/TestimonialsSection";
-import { ManchesterFAQSection, manchesterFaqs } from "@/components/sections/ManchesterFAQSection";
-import { CTASection } from "@/components/sections/CTASection";
 import { TrustBadges } from "@/components/sections/TrustBadges";
-import { GuaranteesSection } from "@/components/sections/GuaranteesSection";
 import { PillarContent } from "@/components/sections/PillarContent";
 import { SchemaScript } from "@/components/seo/SchemaScript";
 import { RouteSEOHead } from "@/components/seo/RouteSEOHead";
@@ -21,6 +15,19 @@ import {
   generateFAQSchema,
 } from "@/lib/schema";
 import { MapPin, ArrowRight } from "lucide-react";
+// Import static data for schemas (not the components)
+import { testimonials } from "@/components/sections/TestimonialsSection";
+import { manchesterFaqs } from "@/components/sections/ManchesterFAQSection";
+// Lazy sections for below-fold content
+import {
+  LazyServicesGrid,
+  LazyTestimonialsSection,
+  LazyLocationsGrid,
+  LazyGuaranteesSection,
+  LazyManchesterFAQSection,
+  LazyCTASection,
+  LazySectionWrapper,
+} from "@/components/lazy/LazySections";
 
 const Index = () => {
   // Priority service-in-location combinations for internal linking
@@ -52,16 +59,16 @@ const Index = () => {
       {/* Pillar content - expanded 1,000-1,500 word section with H2 structure */}
       <PillarContent />
 
-      {/* Below-fold content with content-visibility optimization */}
-      <div className="content-visibility-auto">
-        <ServicesGrid />
-      </div>
-      <div className="content-visibility-auto">
-        <TestimonialsSection />
-      </div>
-      <div className="content-visibility-auto">
-        <LocationsGrid />
-      </div>
+      {/* Below-fold content - lazy loaded for performance */}
+      <LazySectionWrapper height="h-96">
+        <LazyServicesGrid />
+      </LazySectionWrapper>
+      <LazySectionWrapper height="h-80">
+        <LazyTestimonialsSection />
+      </LazySectionWrapper>
+      <LazySectionWrapper height="h-72">
+        <LazyLocationsGrid />
+      </LazySectionWrapper>
 
       {/* Priority Service-in-Location Links (SEO) */}
       <section className="section-padding content-visibility-auto">
@@ -99,15 +106,15 @@ const Index = () => {
         </div>
       </section>
 
-      <div className="content-visibility-auto">
-        <GuaranteesSection />
-      </div>
-      <div className="content-visibility-auto">
-        <ManchesterFAQSection />
-      </div>
-      <div className="content-visibility-auto">
-        <CTASection />
-      </div>
+      <LazySectionWrapper height="h-64">
+        <LazyGuaranteesSection />
+      </LazySectionWrapper>
+      <LazySectionWrapper height="h-96">
+        <LazyManchesterFAQSection />
+      </LazySectionWrapper>
+      <LazySectionWrapper height="h-48">
+        <LazyCTASection />
+      </LazySectionWrapper>
     </Layout>
   );
 };

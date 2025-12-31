@@ -1,7 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
-import { LeadForm } from "@/components/forms/LeadForm";
-import { MapSection } from "@/components/sections/MapSection";
+import { LazyLeadForm } from "@/components/lazy/LazyLeadForm";
+import { LazyMapSection } from "@/components/lazy/LazyMapSection";
 import { CTASection } from "@/components/sections/CTASection";
 import { AIContentBlock } from "@/components/ai/AIContentBlock";
 import { SchemaScript } from "@/components/seo/SchemaScript";
@@ -257,7 +257,7 @@ const LocationServiceDetail = () => {
                 <h3 className="text-xl font-bold mb-4">
                   Get a Quote in {location.name}
                 </h3>
-                <LeadForm
+                <LazyLeadForm
                   sourcePage={`${location.slug}-${service.slug}`}
                   defaultService={service.slug}
                   defaultLocation={location.slug}
@@ -268,7 +268,7 @@ const LocationServiceDetail = () => {
         </div>
       </section>
 
-      <MapSection location={location} />
+      <LazyMapSection location={location} />
       <CTASection />
     </Layout>
   );

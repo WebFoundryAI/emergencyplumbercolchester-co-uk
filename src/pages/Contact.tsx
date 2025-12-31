@@ -1,5 +1,5 @@
 import { Layout } from "@/components/layout/Layout";
-import { LeadForm } from "@/components/forms/LeadForm";
+import { LazyLeadForm } from "@/components/lazy/LazyLeadForm";
 import { RouteSEOHead } from "@/components/seo/RouteSEOHead";
 import { SchemaScript } from "@/components/seo/SchemaScript";
 import { BRAND } from "@/config/brand";
@@ -117,7 +117,7 @@ const Contact = () => {
               <p className="text-muted-foreground mb-6">
                 Fill in your details and we'll get back to you as soon as possible.
               </p>
-              <LeadForm sourcePage="contact" />
+              <LazyLeadForm sourcePage="contact" />
             </div>
           </div>
         </div>
