@@ -51,12 +51,12 @@ export default defineConfig(({ mode }) => ({
     VitePWA({
       registerType: "autoUpdate",
       injectRegister: "script-defer",
-      includeAssets: ["favicon.png", "og/*.jpg", "images/*.jpg", "sitemap.xml", "robots.txt"],
+      includeAssets: ["favicon.png", "og/*.jpg", "images/*.webp", "sitemap.xml", "robots.txt"],
       manifest: {
         name: "Blocked Drains Manchester",
         short_name: "Drain Help",
         description: "Professional drain unblocking and CCTV surveys in Manchester. 24/7 emergency service.",
-        theme_color: "#1565a8",
+        theme_color: "#f97316", // Updated to orange theme
         background_color: "#f5f7fa",
         display: "standalone",
         orientation: "portrait",
@@ -82,72 +82,137 @@ export default defineConfig(({ mode }) => ({
         ],
       },
       workbox: {
-        // Cache strategies
+        // Skip waiting to activate new service worker immediately
+        skipWaiting: true,
+        clientsClaim: true,
+        // Precache essential assets for offline support
+        globPatterns: ["**/*.{js,css,html,ico,png,svg,woff2,webp}"],
+        // More aggressive caching strategies
         runtimeCaching: [
           {
-            // Cache static JS/CSS assets (hashed filenames = immutable)
+            // HTML pages - Network first with fast fallback
+            urlPattern: /^https:\/\/.*\.lovableproject\.com\/(?!api).*/i,
+            handler: "NetworkFirst",
+            options: {
+              cacheName: "pages-cache",
+              expiration: {
+                maxEntries: 50,
+                maxAgeSeconds: 60 * 60 * 24 * 7, // 1 week
+              },
+              networkTimeoutSeconds: 3, // Fast fallback to cache
+              cacheableResponse: {
+                statuses: [0, 200],
+              },
+            },
+          },
+          {
+            // Static JS/CSS assets (hashed = immutable)
             urlPattern: /\.(?:js|css)$/i,
             handler: "CacheFirst",
             options: {
-              cacheName: "static-assets",
+              cacheName: "static-assets-v2",
               expiration: {
-                maxEntries: 50,
+                maxEntries: 100,
                 maxAgeSeconds: 60 * 60 * 24 * 365, // 1 year
+              },
+              cacheableResponse: {
+                statuses: [0, 200],
               },
             },
           },
           {
-            // Cache Google Fonts stylesheets
+            // Google Fonts stylesheets
             urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i,
-            handler: "CacheFirst",
+            handler: "StaleWhileRevalidate",
             options: {
-              cacheName: "google-fonts-stylesheets",
+              cacheName: "google-fonts-stylesheets-v2",
               expiration: {
                 maxEntries: 10,
-                maxAgeSeconds: 60 * 60 * 24 * 365, // 1 year
+                maxAgeSeconds: 60 * 60 * 24 * 365,
+              },
+              cacheableResponse: {
+                statuses: [0, 200],
               },
             },
           },
           {
-            // Cache Google Fonts webfonts
+            // Google Fonts webfonts - cache first (immutable)
             urlPattern: /^https:\/\/fonts\.gstatic\.com\/.*/i,
             handler: "CacheFirst",
             options: {
-              cacheName: "google-fonts-webfonts",
+              cacheName: "google-fonts-webfonts-v2",
               expiration: {
                 maxEntries: 30,
-                maxAgeSeconds: 60 * 60 * 24 * 365, // 1 year
+                maxAgeSeconds: 60 * 60 * 24 * 365,
+              },
+              cacheableResponse: {
+                statuses: [0, 200],
               },
             },
           },
           {
-            // Cache images
-            urlPattern: /\.(?:png|jpg|jpeg|svg|gif|webp)$/i,
+            // Images - cache first with size limit
+            urlPattern: /\.(?:png|jpg|jpeg|svg|gif|webp|avif)$/i,
             handler: "CacheFirst",
             options: {
-              cacheName: "images",
+              cacheName: "images-v2",
               expiration: {
-                maxEntries: 60,
+                maxEntries: 100,
                 maxAgeSeconds: 60 * 60 * 24 * 30, // 30 days
+                purgeOnQuotaError: true, // Clear cache if storage is full
+              },
+              cacheableResponse: {
+                statuses: [0, 200],
               },
             },
           },
           {
-            // Cache API calls with network-first strategy
-            urlPattern: /^https:\/\/krxfvrxmriwzfwzorvzw\.supabase\.co\/.*/i,
+            // Google Maps static images
+            urlPattern: /^https:\/\/maps\.googleapis\.com\/maps\/api\/staticmap.*/i,
+            handler: "CacheFirst",
+            options: {
+              cacheName: "google-maps-v2",
+              expiration: {
+                maxEntries: 30,
+                maxAgeSeconds: 60 * 60 * 24 * 7, // 1 week
+              },
+              cacheableResponse: {
+                statuses: [0, 200],
+              },
+            },
+          },
+          {
+            // Supabase API calls - network first with offline fallback
+            urlPattern: /^https:\/\/.*\.supabase\.co\/.*/i,
             handler: "NetworkFirst",
             options: {
-              cacheName: "api-cache",
+              cacheName: "api-cache-v2",
+              expiration: {
+                maxEntries: 100,
+                maxAgeSeconds: 60 * 60 * 24, // 1 day
+              },
+              networkTimeoutSeconds: 5,
+              cacheableResponse: {
+                statuses: [0, 200],
+              },
+            },
+          },
+          {
+            // External resources - stale while revalidate
+            urlPattern: /^https:\/\/(?!.*supabase|.*googleapis|.*gstatic).*/i,
+            handler: "StaleWhileRevalidate",
+            options: {
+              cacheName: "external-v2",
               expiration: {
                 maxEntries: 50,
                 maxAgeSeconds: 60 * 60 * 24, // 1 day
               },
-              networkTimeoutSeconds: 10,
+              cacheableResponse: {
+                statuses: [0, 200],
+              },
             },
           },
         ],
-        // Precache all built assets
-        globPatterns: ["**/*.{js,css,html,ico,png,svg,woff2}"],
       },
     }),
   ].filter(Boolean),

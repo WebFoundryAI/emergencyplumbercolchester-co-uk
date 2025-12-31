@@ -1,7 +1,7 @@
 import { lazy, Suspense } from "react";
 import { BRAND } from "@/config/brand";
 import { Phone, Clock, Shield } from "lucide-react";
-import heroBg from "@/assets/hero-bg.webp";
+import { ResponsiveHeroImage } from "@/components/ui/ResponsiveHeroImage";
 
 // Lazy load the form to defer react-hook-form, zod, and @radix-ui/react-select
 const LeadForm = lazy(() => import("@/components/forms/LeadForm").then(m => ({ default: m.LeadForm })));
@@ -29,13 +29,8 @@ function FormPlaceholder() {
 export function HeroWithForm() {
   return (
     <section className="hero-section relative overflow-hidden">
-      {/* Background image with subtle dark overlay for text readability */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroBg})` }}
-      >
-        <div className="absolute inset-0 bg-black/40" />
-      </div>
+      {/* Responsive hero background with optimized loading */}
+      <ResponsiveHeroImage priority />
       
       <div className="relative py-16 md:py-24">
         <div className="container-wide px-4">
