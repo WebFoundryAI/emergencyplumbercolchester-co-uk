@@ -79,7 +79,7 @@ const SubServiceDetail = () => {
           <div className="container-wide px-4">
             <Link
               to={`/services/${service.slug}`}
-              className="inline-flex items-center gap-2 text-primary-foreground/70 hover:text-primary-foreground mb-6 transition-colors"
+              className="inline-flex items-center gap-2 text-primary-foreground/90 hover:text-primary-foreground mb-6 transition-colors"
             >
               <ArrowLeft className="h-4 w-4" />
               Back to {service.name}
@@ -89,7 +89,7 @@ const SubServiceDetail = () => {
               <h1 className="text-4xl md:text-5xl font-bold mb-4">
                 {subService.name}
               </h1>
-              <p className="text-lg text-primary-foreground/80 max-w-2xl">
+              <p className="text-lg text-primary-foreground/90 max-w-2xl">
                 {subService.shortLabel || subService.description}
               </p>
             </div>

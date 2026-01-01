@@ -43,7 +43,7 @@ export function TestimonialsSection() {
                   <Star key={i} className="h-5 w-5 fill-accent text-accent" />
                 ))}
               </div>
-              <p className="text-foreground/80 mb-4 italic">"{testimonial.text}"</p>
+              <p className="text-foreground mb-4 italic">"{testimonial.text}"</p>
               <div className="font-semibold">{testimonial.name}</div>
               <div className="text-sm text-muted-foreground">{testimonial.location}</div>
             </div>

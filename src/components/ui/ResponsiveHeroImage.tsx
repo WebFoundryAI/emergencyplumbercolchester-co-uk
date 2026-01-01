@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-// Import hero image - already optimized as WebP
+// Import hero image - Vite resolves this to the hashed URL
 import heroBgFull from "@/assets/hero-bg.webp";
 
 interface ResponsiveHeroImageProps {
@@ -12,15 +12,10 @@ interface ResponsiveHeroImageProps {
  * Responsive hero background component with optimized loading.
  * Uses the existing WebP image with responsive sizing via CSS.
  * 
- * Note: For true multi-resolution srcset, you would need:
- * 1. Source images in PNG/JPG format (not WebP - can't re-encode)
- * 2. vite-imagetools to generate multiple sizes at build time
- * 
- * Current optimizations:
- * - WebP format (already compressed)
- * - Eager loading with high fetch priority for LCP
- * - CSS object-fit for responsive display
- * - Smooth fade-in transition
+ * LCP Optimization:
+ * - Injects <link rel="preload"> with the correct Vite-resolved URL
+ * - Uses fetchPriority="high" for immediate resource prioritization
+ * - Syncs decoding to prevent layout shifts
  */
 export function ResponsiveHeroImage({ 
   className = "",
@@ -28,7 +23,7 @@ export function ResponsiveHeroImage({
 }: ResponsiveHeroImageProps) {
   const [isLoaded, setIsLoaded] = useState(false);
 
-  // Preload the hero image for LCP optimization
+  // Inject preload link for LCP optimization (uses resolved asset URL)
   useEffect(() => {
     if (priority && typeof document !== 'undefined') {
       // Check if preload link already exists
@@ -40,6 +35,8 @@ export function ResponsiveHeroImage({
       link.as = "image";
       link.href = heroBgFull;
       link.type = "image/webp";
+      // fetchpriority attribute for modern browsers
+      link.setAttribute("fetchpriority", "high");
       document.head.appendChild(link);
       
       return () => {
@@ -68,11 +65,13 @@ export function ResponsiveHeroImage({
           srcSet={heroBgFull}
           sizes="100vw"
         />
-        {/* Fallback img element */}
+        {/* Fallback img element with LCP optimizations */}
         <img
           src={heroBgFull}
           alt=""
           role="presentation"
+          width={1920}
+          height={1080}
           loading={priority ? "eager" : "lazy"}
           decoding={priority ? "sync" : "async"}
           fetchPriority={priority ? "high" : "auto"}

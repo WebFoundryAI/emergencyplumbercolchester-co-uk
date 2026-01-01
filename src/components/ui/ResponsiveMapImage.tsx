@@ -94,6 +94,8 @@ export function ResponsiveMapImage({
         <img
           src={imageSrc}
           alt={alt}
+          width={800}
+          height={400}
           loading="lazy"
           decoding="async"
           onLoad={() => setIsLoaded(true)}
@@ -102,7 +104,7 @@ export function ResponsiveMapImage({
             isLoaded ? "opacity-100" : "opacity-0",
             className
           )}
-          // Responsive sizing hints
+          // Responsive sizing hints for browser to pick optimal size
           sizes="(max-width: 768px) 100vw, (max-width: 1024px) 80vw, 800px"
         />
       )}

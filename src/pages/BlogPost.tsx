@@ -129,13 +129,13 @@ const BlogPost = () => {
           <div className="container-narrow px-4">
             <Link
               to="/blog"
-              className="inline-flex items-center gap-2 text-primary-foreground/70 hover:text-primary-foreground mb-6 transition-colors"
+              className="inline-flex items-center gap-2 text-primary-foreground/90 hover:text-primary-foreground mb-6 transition-colors"
             >
               <ArrowLeft className="h-4 w-4" />
               All Posts
             </Link>
             <div className="text-primary-foreground">
-              <time className="text-primary-foreground/70">
+              <time className="text-primary-foreground/90">
                 {new Date(post.created_at).toLocaleDateString("en-GB", {
                   day: "numeric",
                   month: "long",

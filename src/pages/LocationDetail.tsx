@@ -70,7 +70,7 @@ const LocationDetail = () => {
           <div className="container-wide px-4">
             <Link
               to="/locations"
-              className="inline-flex items-center gap-2 text-primary-foreground/70 hover:text-primary-foreground mb-6 transition-colors"
+              className="inline-flex items-center gap-2 text-primary-foreground/90 hover:text-primary-foreground mb-6 transition-colors"
             >
               <ArrowLeft className="h-4 w-4" />
               All Areas
@@ -78,14 +78,14 @@ const LocationDetail = () => {
             <div className="text-primary-foreground">
               <div className="flex items-center gap-2 mb-4">
                 <MapPin className="h-6 w-6 text-accent" />
-                <span className="text-lg text-primary-foreground/80">
+                <span className="text-lg text-primary-foreground/90">
                   {location.countyOrRegion}
                 </span>
               </div>
               <h1 className="text-4xl md:text-5xl font-bold mb-4">
                 Drain Services in {location.name}
               </h1>
-              <p className="text-lg text-primary-foreground/80 max-w-2xl">
+              <p className="text-lg text-primary-foreground/90 max-w-2xl">
                 Professional drain unblocking and repairs in {location.name}. 24/7
                 emergency service, no call-out fee.
               </p>
