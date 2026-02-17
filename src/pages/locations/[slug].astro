@@ -36,20 +36,20 @@ const pageSchema = [
     source={`location:${location.slug}`}
   />
 
-  <section class="section section--tight bg-white">
-    <div class="container grid grid--2">
-      <article class="card">
-        <h2>Local response in {location.name}</h2>
-        <p>We attend homes and businesses across {location.name} with rapid callout availability and clear fixed pricing.</p>
+  <section class="section-padding bg-white">
+    <div class="container-wide px-4 grid md:grid-cols-2 gap-8">
+      <article class="bg-card p-6 rounded-xl border border-border shadow-sm">
+        <h2 class="text-xl font-bold mb-4">Local response in {location.name}</h2>
+        <p class="text-muted-foreground">We attend homes and businesses across {location.name} with rapid callout availability and clear fixed pricing.</p>
         <ul>
           <li>Typical urgent response target: same day</li>
           <li>Common callouts: blocked sinks, toilets, and outside drains</li>
           <li>Coverage includes nearby neighbourhoods and links roads</li>
         </ul>
       </article>
-      <article class="card">
-        <h2>Services available in {location.name}</h2>
-        <div class="grid">
+      <article class="bg-card p-6 rounded-xl border border-border shadow-sm">
+        <h2 class="text-xl font-bold mb-4">Services available in {location.name}</h2>
+        <div class="grid gap-3">
           {SERVICES.map((service) => (
             <a href={`/locations/${location.slug}/${service.slug}/`}>{service.name} in {location.name}</a>
           ))}
@@ -58,25 +58,28 @@ const pageSchema = [
     </div>
   </section>
 
-  <section class="section">
-    <div class="container">
-      <h2>Areas covered near {location.name}</h2>
-      <div class="grid grid--3">
+  <section class="section-padding">
+    <div class="container-wide px-4">
+      <h2 class="text-2xl md:text-3xl font-bold mb-8">Areas covered near {location.name}</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {LOCATIONS.filter((l) => l.slug !== location.slug).slice(0, 6).map((nearby) => (
-          <a class="card" href={`/locations/${nearby.slug}/`}>Blocked drains in {nearby.name}</a>
+          <a class="bg-card p-6 rounded-xl border border-border shadow-sm hover:shadow-md hover:border-primary transition-all no-underline text-foreground" href={`/locations/${nearby.slug}/`}>Blocked drains in {nearby.name}</a>
         ))}
       </div>
     </div>
   </section>
 
-  <section class="section section--tight bg-white">
-    <div class="container">
-      <h2>{location.name} drainage FAQs</h2>
-      <div class="accordion">
+  <section class="section-padding bg-white">
+    <div class="container-wide px-4">
+      <h2 class="text-2xl md:text-3xl font-bold mb-8">{location.name} drainage FAQs</h2>
+      <div class="max-w-3xl mx-auto space-y-4">
         {faqs.slice(0, 5).map((faq, i) => (
-          <details class="accordion__item" open={i === 0}>
-            <summary class="accordion__trigger">{faq.question}</summary>
-            <div class="accordion__panel"><p>{faq.answer}</p></div>
+          <details class="bg-card rounded-lg card-elevated group" open={i === 0}>
+            <summary class="p-4 md:p-6 cursor-pointer font-semibold text-lg hover:text-primary transition-colors flex items-center justify-between">
+              {faq.question}
+              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="shrink-0 ml-2 group-open:rotate-180 transition-transform"><path d="m6 9 6 6 6-6"></path></svg>
+            </summary>
+            <div class="px-4 md:px-6 pb-4 md:pb-6 text-muted-foreground"><p>{faq.answer}</p></div>
           </details>
         ))}
       </div>

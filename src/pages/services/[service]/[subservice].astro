@@ -39,20 +39,20 @@ const pageSchema = [
     source={`subservice:${service.slug}/${subService.slug}`}
   />
 
-  <section class="section section--tight bg-white">
-    <div class="container grid grid--2">
-      <article class="card">
-        <h2>What this service covers</h2>
-        <p>{subService.description}</p>
+  <section class="section-padding bg-white">
+    <div class="container-wide px-4 grid md:grid-cols-2 gap-8">
+      <article class="bg-card p-6 rounded-xl border border-border shadow-sm">
+        <h2 class="text-xl font-bold mb-4">What this service covers</h2>
+        <p class="text-muted-foreground">{subService.description}</p>
         <ul>
           <li>Diagnosis and targeted resolution</li>
           <li>Safe, compliant working practices</li>
           <li>Transparent next-step recommendations</li>
         </ul>
       </article>
-      <article class="card">
-        <h2>Nearby locations</h2>
-        <div class="grid">
+      <article class="bg-card p-6 rounded-xl border border-border shadow-sm">
+        <h2 class="text-xl font-bold mb-4">Nearby locations</h2>
+        <div class="grid gap-3">
           {LOCATIONS.slice(0, 6).map((location) => (
             <a href={`/locations/${location.slug}/${service.slug}/`}>{subService.name} in {location.name}</a>
           ))}

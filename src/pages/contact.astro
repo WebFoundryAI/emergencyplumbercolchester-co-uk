@@ -17,11 +17,11 @@ const pageSchema = [
 ---
 
 <BaseLayout title={title} description={description} canonical="/contact/" schema={pageSchema}>
-  <section class="section section--tight bg-white">
-    <div class="container grid grid--2">
-      <div class="card">
-        <h1>Contact our drainage team</h1>
-        <p>Call us for immediate support or send your details and we’ll call back quickly.</p>
+  <section class="section-padding bg-white">
+    <div class="container-wide px-4 grid md:grid-cols-2 gap-8">
+      <div class="bg-card p-6 rounded-xl border border-border shadow-sm">
+        <h1 class="text-3xl md:text-4xl font-bold mb-4">Contact our drainage team</h1>
+        <p class="text-muted-foreground mb-6">Call us for immediate support or send your details and we'll call back quickly.</p>
 
         <p><strong>Phone:</strong> <a href={`tel:${BRAND.phone}`}>{BRAND.phoneFormatted}</a></p>
         <p><strong>Email:</strong> <a href={`mailto:${BRAND.email}`}>{BRAND.email}</a></p>

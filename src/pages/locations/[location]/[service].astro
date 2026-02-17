@@ -37,21 +37,22 @@ const pageSchema = [
     source={`location-service:${location.slug}/${service.slug}`}
   />
 
-  <section class="section section--tight bg-white">
-    <div class="container grid grid--2">
-      <article class="card">
-        <h2>Why customers in {location.name} book this service</h2>
+  <section class="section-padding bg-white">
+    <div class="container-wide px-4 grid md:grid-cols-2 gap-8">
+      <article class="bg-card p-6 rounded-xl border border-border shadow-sm">
+        <h2 class="text-xl font-bold mb-4">Why customers in {location.name} book this service</h2>
         <ul>
           <li>Fast attendance for urgent drainage issues</li>
           <li>Clear communication and fixed pricing options</li>
           <li>Equipment suited to domestic and commercial work</li>
         </ul>
       </article>
-      <article class="card">
-        <h2>Related pages</h2>
-        <a href={`/services/${service.slug}/`}>Read full {service.name} service details</a>
-        <br />
-        <a href={`/locations/${location.slug}/`}>See all drainage services in {location.name}</a>
+      <article class="bg-card p-6 rounded-xl border border-border shadow-sm">
+        <h2 class="text-xl font-bold mb-4">Related pages</h2>
+        <div class="grid gap-3">
+          <a href={`/services/${service.slug}/`}>Read full {service.name} service details</a>
+          <a href={`/locations/${location.slug}/`}>See all drainage services in {location.name}</a>
+        </div>
       </article>
     </div>
   </section>
