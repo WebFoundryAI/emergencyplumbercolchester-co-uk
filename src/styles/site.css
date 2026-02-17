@@ -95,6 +95,10 @@
     );
   }
 
+  .hero-lead-form-card {
+    color: hsl(var(--foreground));
+  }
+
   @media (max-width: 1023px) {
     .hero-gradient-overlay {
       background: linear-gradient(
