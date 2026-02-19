@@ -55,8 +55,8 @@ describe('Locations Data', () => {
   });
 
   describe('INDEXED_LOCATIONS', () => {
-    it('contains exactly 4 locations', () => {
-      expect(INDEXED_LOCATIONS).toHaveLength(4);
+    it('contains all 10 locations', () => {
+      expect(INDEXED_LOCATIONS).toHaveLength(10);
     });
 
     it('includes only locations without noindex', () => {
@@ -65,12 +65,18 @@ describe('Locations Data', () => {
       }
     });
 
-    it('includes manchester, salford, stockport, altrincham', () => {
+    it('includes all location slugs', () => {
       const slugs = INDEXED_LOCATIONS.map((l) => l.slug);
       expect(slugs).toContain('manchester');
       expect(slugs).toContain('salford');
       expect(slugs).toContain('stockport');
       expect(slugs).toContain('altrincham');
+      expect(slugs).toContain('bolton');
+      expect(slugs).toContain('oldham');
+      expect(slugs).toContain('rochdale');
+      expect(slugs).toContain('sale');
+      expect(slugs).toContain('didsbury');
+      expect(slugs).toContain('chorlton');
     });
   });
 
