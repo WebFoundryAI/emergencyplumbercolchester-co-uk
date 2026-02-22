@@ -59,7 +59,10 @@ const ogImage = image ? `${siteUrl}${image}` : defaultOgImage;
 
     <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="google-site-verification" content="K-EecGB0etoqiVHnYYUt2Sc6LrEKjoGmykJD-HOd7fo" />
-    <link rel="preload" as="image" href="/images/hero-bg.webp" type="image/webp" />
+    <link rel="preload" as="image" href="/images/hero-bg-mobile.webp" type="image/webp" media="(max-width: 767px)" />
+    <link rel="preload" as="image" href="/images/hero-bg.webp" type="image/webp" media="(min-width: 768px)" />
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+    <link rel="dns-prefetch" href="https://www.google-analytics.com" />
 
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
@@ -83,10 +86,20 @@ const ogImage = image ? `${siteUrl}${image}` : defaultOgImage;
         }
       } catch (e) {}
     </script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZBN7YE9HZJ"></script>
     <script is:inline>
-      gtag('js', new Date());
-      gtag('config', 'G-ZBN7YE9HZJ');
+      function loadGTM() {
+        var s = document.createElement('script');
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-ZBN7YE9HZJ';
+        s.async = true;
+        document.head.appendChild(s);
+        gtag('js', new Date());
+        gtag('config', 'G-ZBN7YE9HZJ');
+      }
+      if (typeof requestIdleCallback === 'function') {
+        requestIdleCallback(loadGTM, { timeout: 3000 });
+      } else {
+        setTimeout(loadGTM, 2000);
+      }
     </script>
   </head>
   <body class="min-h-screen flex flex-col">
