@@ -1,14 +1,14 @@
 export const BRAND = {
-  brandName: "Edinburgh Drain Unblocker",
-  domain: "edinburghdrainunblocker.co.uk",
-  primaryLocation: "Edinburgh",
-  serviceAreaLabel: "Edinburgh and the Lothians",
-  phone: "01312256612",
-  phoneFormatted: "0131 225 6612",
-  email: "contactus@edinburghdrainunblocker.co.uk",
-  addressLine1: "7 Exchange Crescent, Conference Square",
-  addressLine2: "Edinburgh",
-  postcode: "EH3 8AN",
+  brandName: "Glasgow Drain Unblocker",
+  domain: "glasgowdrainunblocker.co.uk",
+  primaryLocation: "Glasgow",
+  serviceAreaLabel: "Glasgow and surrounding areas",
+  phone: "01413740263",
+  phoneFormatted: "0141 374 0263",
+  email: "contactus@glasgowdrainunblocker.co.uk",
+  addressLine1: "272 Bath Street",
+  addressLine2: "Glasgow",
+  postcode: "G2 4JR",
   tagline: "Fast, Reliable Drainage Solutions",
   emergencyAvailable: true,
 
@@ -16,10 +16,5 @@ export const BRAND = {
   ga4Id: "",
   gscVerification: "",
 
-  socialProfiles: [
-    "https://www.facebook.com/EdinburghDrainUnblocker",
-    "https://twitter.com/DrainEdinburgh",
-    "https://www.instagram.com/edinburgh_drain_unblocker",
-    "https://www.linkedin.com/company/edinburgh-drain-unblocker"
-  ]
+  socialProfiles: [] as string[]
 };

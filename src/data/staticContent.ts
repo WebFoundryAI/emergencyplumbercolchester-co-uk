@@ -20,33 +20,33 @@ We are committed to fair pricing and transparent service. We do not charge call-
 
 If you have a drainage problem, give us a call. Our friendly team is ready to help, day or night. You can also fill in the contact form on our website and we will call you back within 30 minutes during business hours.`;
 
-export const SERVICES_OVERVIEW = `At Edinburgh Drain Unblocker, we provide a comprehensive range of professional drainage services designed to meet the needs of residential and commercial properties throughout Edinburgh and the Lothians. Our experienced team is equipped with the latest technology and expertise to handle everything from minor blockages to complex drainage issues, ensuring your property's drainage system operates efficiently and reliably.`;
+export const SERVICES_OVERVIEW = `At Glasgow Drain Unblocker, we provide a comprehensive range of professional drainage services designed to meet the needs of residential and commercial properties throughout Glasgow and surrounding areas. Our experienced team is equipped with the latest technology and expertise to handle everything from minor blockages to complex drainage issues, ensuring your property's drainage system operates efficiently and reliably.`;
 
-export const HOME_INTRO = `Need a drainage team you can trust in Edinburgh? We provide fast, clear, and professional help for blocked drains, drain cleaning, CCTV surveys, and repairs. We explain the issue in plain English, confirm the price before work starts, and aim to solve the problem on the first visit whenever possible. From small household blockages to urgent drainage emergencies, our local engineers are ready 24/7 across Edinburgh and the Lothians.`;
+export const HOME_INTRO = `Need a drainage team you can trust in Glasgow? We provide fast, clear, and professional help for blocked drains, drain cleaning, CCTV surveys, and repairs. We explain the issue in plain English, confirm the price before work starts, and aim to solve the problem on the first visit whenever possible. From small household blockages to urgent drainage emergencies, our local engineers are ready 24/7 across Glasgow and surrounding areas.`;
 
 export const LOCATION_CONTENT: Record<string, string> = {
-  edinburgh: `Need a reliable drainage specialist in Edinburgh? Edinburgh Drain Unblocker provides fast, professional drainage services to homes and businesses throughout Edinburgh and the surrounding area. From the Old Town and Royal Mile through to the residential neighbourhoods of Marchmont, Bruntsfield, Stockbridge, and Tollcross, we provide comprehensive drainage solutions for properties of all sizes. Edinburgh's mix of historic Georgian and Victorian architecture presents unique drainage challenges that our experienced engineers understand and are equipped to handle.`,
+  glasgow: `Need a reliable drainage specialist in Glasgow? Glasgow Drain Unblocker provides fast, professional drainage services to homes and businesses throughout Glasgow and the surrounding area. From the city centre to the surrounding residential areas including the West End, Southside, East End, and North Glasgow, we provide comprehensive drainage solutions for properties of all sizes.`,
 
-  leith: `Leith, Edinburgh's historic port district, is a vibrant area known for its maritime heritage and mix of converted warehouses, traditional tenements, and modern waterfront developments along the Shore and Ocean Terminal. Need drainage help in Leith? Edinburgh Drain Unblocker provides fast, reliable solutions to keep your drainage system in optimal condition, whether you live in a period tenement or a new-build apartment.`,
+  paisley: `Paisley, the largest town in Renfrewshire, is known for its rich textile heritage and impressive Victorian architecture. From the historic town centre to the surrounding residential areas, we provide drainage services tailored to all property types across Paisley.`,
 
-  musselburgh: `Musselburgh, known as the Honest Toun, lies just east of Edinburgh on the banks of the River Esk. It is one of the oldest settlements in Scotland, with a mix of historic properties in the town centre and newer residential developments. From the traditional stone-built homes near the High Street to modern housing estates, we provide drainage services tailored to all property types across Musselburgh and the surrounding East Lothian area.`,
+  "east-kilbride": `East Kilbride, one of Scotland's largest towns, is a thriving community south of Glasgow known for its modern housing estates and commercial developments. Need drainage help in East Kilbride? Glasgow Drain Unblocker provides fast, reliable solutions to keep your drainage system in optimal condition.`,
 
-  dalkeith: `Dalkeith, situated in Midlothian at the confluence of the North and South Esk rivers, is a historic market town with a strong sense of community. Properties range from period stone-built homes in the town centre to family housing estates in the surrounding area. Our team provides comprehensive drainage services across Dalkeith and neighbouring communities, with local knowledge of the area's specific drainage infrastructure.`,
+  motherwell: `Motherwell, a major town in North Lanarkshire with proud industrial roots, is home to diverse residential areas from traditional tenement flats to modern housing developments. Our team provides comprehensive drainage services across Motherwell and surrounding areas.`,
 
-  livingston: `Livingston, one of Scotland's new towns in West Lothian, features a wide variety of modern housing developments alongside established residential areas. As a planned town, many properties share interconnected drainage systems that require specialist knowledge. Edinburgh Drain Unblocker provides reliable drainage services across Livingston and the wider West Lothian area, from Deans and Knightsridge to Ladywell and Murieston.`,
+  hamilton: `Hamilton, situated in South Lanarkshire along the River Clyde, combines historic charm with modern development. From period properties in the town centre to newer estates on the outskirts, we provide drainage services for all property types in Hamilton.`,
 
-  corstorphine: `Corstorphine, a popular residential area in the west of Edinburgh, is known for its excellent amenities, proximity to Edinburgh Zoo, and the historic Corstorphine Hill. The area features a mix of traditional bungalows, inter-war semis, and Victorian stone villas, each presenting unique drainage considerations. Our team understands the specific challenges of this area's varied housing stock and mature drainage systems.`,
+  lanark: `Lanark, a historic royal burgh in South Lanarkshire, is known for its proximity to the Falls of Clyde and New Lanark World Heritage Site. Our drainage team provides reliable services throughout Lanark and surrounding rural areas.`,
 
-  morningside: `Morningside, one of Edinburgh's most sought-after suburbs, is renowned for its leafy streets, Victorian and Edwardian stone villas, and charming village atmosphere along Morningside Road. Our team understands the unique drainage challenges of this area's mature housing stock, where ageing clay pipes and tree root ingress are common issues. We provide expert drainage services for all property types in Morningside, Churchhill, and the surrounding area.`,
+  cumbernauld: `Cumbernauld, one of Scotland's new towns in North Lanarkshire, features a mix of modern housing and commercial developments. We provide drainage services tailored to the unique characteristics of this planned community.`,
 
-  portobello: `Portobello, Edinburgh's seaside suburb on the Firth of Forth, is a characterful area known for its promenade, sandy beach, and mix of Georgian, Victorian, and Edwardian properties. The coastal location and older infrastructure present specific drainage challenges, including the effects of sand and salt on underground pipes. Edinburgh Drain Unblocker provides specialist drainage solutions for homes and businesses throughout Portobello and Joppa.`,
+  coatbridge: `Coatbridge, a town in North Lanarkshire with a rich industrial heritage, has diverse residential areas ranging from traditional sandstone properties to modern housing. Our team provides comprehensive drainage services across Coatbridge and the surrounding area.`,
 
-  bonnyrigg: `Bonnyrigg, a thriving town in Midlothian just south of Edinburgh, offers a mix of traditional stone-built properties and modern family housing. The town has seen significant development in recent years, creating a blend of established and newer drainage infrastructure. Our drainage team provides reliable services throughout Bonnyrigg, Lasswade, and the surrounding Midlothian communities.`,
+  rutherglen: `Rutherglen, one of the oldest burghs in Scotland, sits just south of Glasgow city centre. From its historic core to surrounding residential areas, we provide fast, professional drainage services for all property types in Rutherglen.`,
 };
 
 export const CONTACT_CONTENT = {
   serviceAreaOverview:
-    "Our drainage engineers cover the whole of Edinburgh and the Lothians, from Edinburgh city centre and Leith through to Musselburgh, Dalkeith, Livingston, Corstorphine, Morningside, Portobello, and Bonnyrigg. Whether you live in a Georgian townhouse in the New Town, a traditional tenement in Marchmont, or a modern family home in Livingston, we have engineers positioned to reach you quickly. We service both residential and commercial properties of all sizes, handling everything from a single blocked sink to complex drainage networks serving multi-unit buildings.",
+    "Our drainage engineers cover the whole of Glasgow and surrounding areas, from Glasgow city centre and Paisley through to East Kilbride, Motherwell, Hamilton, Lanark, Cumbernauld, Coatbridge, and Rutherglen. Whether you live in a tenement flat in the West End, a sandstone villa in Shawlands, or a modern family home in Hamilton, we have engineers positioned to reach you quickly. We service both residential and commercial properties of all sizes, handling everything from a single blocked sink to complex drainage networks serving multi-unit buildings.",
   businessHours:
     "Our standard appointment slots run Monday to Saturday, 8am to 6pm. For planned work such as CCTV surveys, maintenance jetting, and non-urgent repairs, we offer flexible booking including early morning and weekend slots. For urgent drainage issues — flooding, sewage backup, or any situation posing a health risk — our emergency response team operates 24 hours a day, 7 days a week, 365 days a year, including bank holidays. Emergency calls are answered immediately by our dispatch team, not a call centre.",
   whatToTellUs: [
@@ -62,7 +62,7 @@ export const CONTACT_CONTENT = {
   faqs: [
     {
       question: "How quickly will you respond after I get in touch?",
-      answer: "For online form submissions, we aim to call you back within 30 minutes during business hours. For phone enquiries, you speak to our team immediately. Emergency callouts are dispatched straight away, with engineers typically arriving within 60 to 90 minutes across Edinburgh and the Lothians."
+      answer: "For online form submissions, we aim to call you back within 30 minutes during business hours. For phone enquiries, you speak to our team immediately. Emergency callouts are dispatched straight away, with engineers typically arriving within 60 to 90 minutes across Glasgow and surrounding areas."
     },
     {
       question: "Do you charge for callouts or quotes?",
@@ -70,7 +70,7 @@ export const CONTACT_CONTENT = {
     },
     {
       question: "What areas do you cover?",
-      answer: "We cover all of Edinburgh and the Lothians including Edinburgh, Leith, Musselburgh, Dalkeith, Livingston, Corstorphine, Morningside, Portobello, Bonnyrigg, and all surrounding neighbourhoods. If you are unsure whether we cover your area, call us and we will confirm."
+      answer: "We cover all of Glasgow and surrounding areas including Glasgow, Paisley, East Kilbride, Motherwell, Hamilton, Lanark, Cumbernauld, Coatbridge, Rutherglen, and all surrounding neighbourhoods. If you are unsure whether we cover your area, call us and we will confirm."
     }
   ]
 };

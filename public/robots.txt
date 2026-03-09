@@ -1,5 +1,5 @@
-# Edinburgh Drain Unblocker - robots.txt
-# https://edinburghdrainunblocker.co.uk
+# Glasgow Drain Unblocker - robots.txt
+# https://glasgowdrainunblocker.co.uk
 # Last updated: 2026-03-05
 
 # ==============================================
@@ -44,7 +44,7 @@ Disallow: /status
 Disallow: /_astro/
 
 # Sitemap location
-Sitemap: https://edinburghdrainunblocker.co.uk/sitemap.xml
+Sitemap: https://glasgowdrainunblocker.co.uk/sitemap.xml
 
 # Host preference (canonical non-www HTTPS)
-Host: https://edinburghdrainunblocker.co.uk
+Host: https://glasgowdrainunblocker.co.uk

@@ -23,17 +23,17 @@ describe('Locations Data', () => {
       }
     });
 
-    it('every location has latitude within Edinburgh & Lothians bounds', () => {
+    it('every location has latitude within Glasgow & Central Scotland bounds', () => {
       for (const loc of LOCATIONS) {
-        expect(loc.latitude).toBeGreaterThan(55.8);
+        expect(loc.latitude).toBeGreaterThan(55.6);
         expect(loc.latitude).toBeLessThan(56.1);
       }
     });
 
-    it('every location has longitude within Edinburgh & Lothians bounds', () => {
+    it('every location has longitude within Glasgow & Central Scotland bounds', () => {
       for (const loc of LOCATIONS) {
-        expect(loc.longitude).toBeGreaterThan(-3.6);
-        expect(loc.longitude).toBeLessThan(-3.0);
+        expect(loc.longitude).toBeGreaterThan(-4.5);
+        expect(loc.longitude).toBeLessThan(-3.7);
       }
     });
 
@@ -45,8 +45,8 @@ describe('Locations Data', () => {
   });
 
   describe('PRIMARY_LOCATION', () => {
-    it('is "edinburgh"', () => {
-      expect(PRIMARY_LOCATION.slug).toBe('edinburgh');
+    it('is "glasgow"', () => {
+      expect(PRIMARY_LOCATION.slug).toBe('glasgow');
     });
 
     it('is first in LOCATIONS array', () => {
@@ -67,29 +67,29 @@ describe('Locations Data', () => {
 
     it('includes all location slugs', () => {
       const slugs = INDEXED_LOCATIONS.map((l) => l.slug);
-      expect(slugs).toContain('edinburgh');
-      expect(slugs).toContain('leith');
-      expect(slugs).toContain('musselburgh');
-      expect(slugs).toContain('dalkeith');
-      expect(slugs).toContain('livingston');
-      expect(slugs).toContain('corstorphine');
-      expect(slugs).toContain('morningside');
-      expect(slugs).toContain('portobello');
-      expect(slugs).toContain('bonnyrigg');
+      expect(slugs).toContain('glasgow');
+      expect(slugs).toContain('east-kilbride');
+      expect(slugs).toContain('paisley');
+      expect(slugs).toContain('motherwell');
+      expect(slugs).toContain('hamilton');
+      expect(slugs).toContain('lanark');
+      expect(slugs).toContain('cumbernauld');
+      expect(slugs).toContain('coatbridge');
+      expect(slugs).toContain('rutherglen');
     });
   });
 
   describe('getLocationBySlug', () => {
-    it('returns correct location for "edinburgh"', () => {
-      const loc = getLocationBySlug('edinburgh');
+    it('returns correct location for "glasgow"', () => {
+      const loc = getLocationBySlug('glasgow');
       expect(loc).toBeDefined();
-      expect(loc!.name).toBe('Edinburgh');
+      expect(loc!.name).toBe('Glasgow');
     });
 
-    it('returns correct location for "leith"', () => {
-      const loc = getLocationBySlug('leith');
+    it('returns correct location for "east-kilbride"', () => {
+      const loc = getLocationBySlug('east-kilbride');
       expect(loc).toBeDefined();
-      expect(loc!.name).toBe('Leith');
+      expect(loc!.name).toBe('East Kilbride');
     });
 
     it('returns undefined for non-existent slug', () => {

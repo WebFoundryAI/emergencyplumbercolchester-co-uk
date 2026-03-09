@@ -23,7 +23,7 @@ export function getBaseBusinessSchema() {
     "@type": "Plumber",
     "@id": `${siteUrl}/#business`,
     "name": BRAND.brandName,
-    "description": "Professional drain unblocking, CCTV surveys, and emergency drainage services across Edinburgh and the Lothians. Fast response, no call-out fee, 24/7 availability.",
+    "description": "Professional drain unblocking, CCTV surveys, and emergency drainage services across Glasgow and surrounding areas. Fast response, no call-out fee, 24/7 availability.",
     "url": siteUrl,
     "telephone": `+44${BRAND.phone.substring(1)}`,
     "email": BRAND.email,
@@ -32,15 +32,15 @@ export function getBaseBusinessSchema() {
     "address": {
       "@type": "PostalAddress",
       "streetAddress": `${BRAND.addressLine1}, ${BRAND.addressLine2}`,
-      "addressLocality": "Edinburgh",
-      "addressRegion": "City of Edinburgh",
+      "addressLocality": "Glasgow",
+      "addressRegion": "City of Glasgow",
       "postalCode": BRAND.postcode,
       "addressCountry": "GB"
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": 55.9533,
-      "longitude": -3.1883
+      "latitude": 55.8642,
+      "longitude": -4.2518
     },
     "openingHoursSpecification": [
       {
@@ -58,7 +58,7 @@ export function getBaseBusinessSchema() {
       "name": area,
       "containedInPlace": {
         "@type": "AdministrativeArea",
-        "name": "Edinburgh and the Lothians"
+        "name": "Glasgow and surrounding areas"
       }
     })),
     "hasOfferCatalog": {
@@ -202,7 +202,7 @@ export function getLocationPageSchema(location: Location) {
       },
       "containedInPlace": {
         "@type": "AdministrativeArea",
-        "name": location.countyOrRegion || "Edinburgh and the Lothians"
+        "name": location.countyOrRegion || "Glasgow and surrounding areas"
       }
     },
     "geo": {
@@ -226,7 +226,7 @@ export function getLocationServicePageSchema(location: Location, service: Servic
     "@type": "Service",
     "@id": `${siteUrl}/locations/${location.slug}/${service.slug}/#service`,
     "name": `${service.name} in ${location.name}`,
-    "description": `Professional ${service.name.toLowerCase()} services in ${location.name}, ${location.countyOrRegion || 'Edinburgh and the Lothians'}. Fast response, no call-out fee, 24/7 availability.`,
+    "description": `Professional ${service.name.toLowerCase()} services in ${location.name}, ${location.countyOrRegion || 'Glasgow and surrounding areas'}. Fast response, no call-out fee, 24/7 availability.`,
     "url": `${siteUrl}/locations/${location.slug}/${service.slug}`,
     "provider": {
       "@id": `${siteUrl}/#business`
@@ -364,14 +364,14 @@ export function getOrganizationSchema() {
       "height": 630
     },
     "image": `${siteUrl}/images/og-default.jpg`,
-    "description": "Professional drain unblocking, CCTV surveys, and emergency drainage services across Edinburgh and the Lothians. Fast response, no call-out fee, 24/7 availability.",
+    "description": "Professional drain unblocking, CCTV surveys, and emergency drainage services across Glasgow and surrounding areas. Fast response, no call-out fee, 24/7 availability.",
     "telephone": `+44${BRAND.phone.substring(1)}`,
     "email": BRAND.email,
     "address": {
       "@type": "PostalAddress",
       "streetAddress": `${BRAND.addressLine1}, ${BRAND.addressLine2}`,
-      "addressLocality": "Edinburgh",
-      "addressRegion": "City of Edinburgh",
+      "addressLocality": "Glasgow",
+      "addressRegion": "City of Glasgow",
       "postalCode": BRAND.postcode,
       "addressCountry": "GB"
     },
@@ -402,8 +402,8 @@ export function getOrganizationSchema() {
       "@type": "Place",
       "address": {
         "@type": "PostalAddress",
-        "addressLocality": "Edinburgh",
-        "addressRegion": "City of Edinburgh",
+        "addressLocality": "Glasgow",
+        "addressRegion": "City of Glasgow",
         "addressCountry": "GB"
       }
     },
@@ -494,7 +494,7 @@ export function getWebSiteSchema() {
     "@id": `${siteUrl}/#website`,
     "url": siteUrl,
     "name": BRAND.brandName,
-    "description": "Professional drain unblocking, CCTV surveys, and emergency drainage services across Edinburgh and the Lothians.",
+    "description": "Professional drain unblocking, CCTV surveys, and emergency drainage services across Glasgow and surrounding areas.",
     "publisher": {
       "@id": `${siteUrl}/#organization`
     },
