@@ -1,8 +1,8 @@
 export const BRAND = {
   brandName: "Emergency Plumber Colchester",
   domain: "emergencyplumbercolchester.co.uk",
-  primaryLocation: "Manchester",
-  serviceAreaLabel: "Manchester and surrounding areas",
+  primaryLocation: "Colchester",
+  serviceAreaLabel: "Colchester and surrounding areas",
   phone: "01206548833",
   phoneFormatted: "01206 548833",
   email: "info@emergencyplumbercolchester.co.uk",
