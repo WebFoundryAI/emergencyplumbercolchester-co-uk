@@ -13,7 +13,7 @@ export const BRAND = {
   emergencyAvailable: true,
 
   // Per-site tracking & verification — update these when cloning the template
-  ga4Id: "",
+  ga4Id: "G-H1EC45S0BV",
   gscVerification: "",
 
   socialProfiles: [] as string[]
